@@ -13,13 +13,14 @@
                 extend: {
                     colors: {
                         kth: {
-                            gold: '#C49F30',
+                            cerulean: '#007BA7',
                             dark: '#0a0a0a',
                             slate: '#1e293b',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'Roboto', 'sans-serif'],
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Figtree', 'sans-serif'],
                     },
                     letterSpacing: {
                         widest: '.25em',
@@ -28,34 +29,48 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-heading {
+            font-family: 'Figtree', sans-serif;
         }
     </style>
 </head>
 
-<body class="bg-kth-dark text-gray-200 antialiased selection:bg-kth-gold selection:text-black">
+<body class="bg-kth-dark text-gray-200 antialiased selection:bg-kth-cerulean selection:text-white">
 
     <!-- Navbar -->
     <nav
         class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
         <!-- Logo Text -->
         <a href="index.html"
-            class="text-xl font-light tracking-widest uppercase border-b border-transparent hover:border-kth-gold transition-all duration-300">
+            class="text-xl font-light tracking-widest uppercase border-b border-transparent hover:border-kth-cerulean transition-all duration-300 font-heading">
             KTH <span class="font-bold">I-HeaL</span>
         </a>
 
         <!-- Right Menu -->
         <div class="hidden lg:flex space-x-8 text-xs font-light tracking-widest">
-            <a href="index.html" class="text-kth-gold uppercase border-b border-kth-gold">Home</a>
-            <a href="people.html" class="hover:text-kth-gold transition duration-300 uppercase">People</a>
-            <a href="research.html" class="hover:text-kth-gold transition duration-300 uppercase">Research</a>
-            <a href="#" class="hover:text-kth-gold transition duration-300 uppercase">Publications</a>
-            <a href="#news" class="hover:text-kth-gold transition duration-300 uppercase">News</a>
-            <a href="#join" class="hover:text-kth-gold transition duration-300 uppercase">Join Us</a>
-            <a href="#contact" class="hover:text-kth-gold transition duration-300 uppercase">Contact</a>
+            <a href="index.html" class="text-kth-cerulean uppercase border-b border-kth-cerulean">Home</a>
+            <a href="people.html" class="hover:text-kth-cerulean transition duration-300 uppercase">People</a>
+            <a href="research.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Research</a>
+            <a href="#" class="hover:text-kth-cerulean transition duration-300 uppercase">Publications</a>
+            <a href="#news" class="hover:text-kth-cerulean transition duration-300 uppercase">News</a>
+            <a href="#join" class="hover:text-kth-cerulean transition duration-300 uppercase">Join Us</a>
+            <a href="#contact" class="hover:text-kth-cerulean transition duration-300 uppercase">Contact</a>
         </div>
 
         <!-- Mobile Menu Icon (Hamburger) -->
@@ -104,10 +119,10 @@
                 class="group relative block border-r border-gray-900 p-12 hover:bg-white/[0.02] transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <h3
-                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-gold transition-colors">
+                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-cerulean transition-colors font-heading">
                         People</h3>
                     <div
-                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-gold transition-all duration-700">
+                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
                     <p class="text-sm text-gray-500 font-light leading-loose">Meet the diverse team of engineers and
                         clinicians driving our research forward.</p>
@@ -118,10 +133,10 @@
                 class="group relative block border-r border-gray-900 p-12 hover:bg-white/[0.02] transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <h3
-                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-gold transition-colors">
+                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-cerulean transition-colors font-heading">
                         Research</h3>
                     <div
-                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-gold transition-all duration-700">
+                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
                     <p class="text-sm text-gray-500 font-light leading-loose">Exploring biomechanics, computational
                         modeling, and medical device innovation.</p>
@@ -131,10 +146,10 @@
             <a href="#join" class="group relative block p-12 hover:bg-white/[0.02] transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <h3
-                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-gold transition-colors">
+                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-cerulean transition-colors font-heading">
                         Join Us</h3>
                     <div
-                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-gold transition-all duration-700">
+                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
                     <p class="text-sm text-gray-500 font-light leading-loose">Opportunities for PhD students, post-docs,
                         and thesis projects.</p>
@@ -146,7 +161,8 @@
     <!-- High-Fidelity LinkedIn News Feed -->
     <section id="news" class="py-32 bg-black">
         <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-            <h4 class="text-kth-gold text-sm tracking-widest uppercase mb-16 text-center md:text-left font-semibold">
+            <h4
+                class="text-kth-cerulean text-sm tracking-widest uppercase mb-16 text-center md:text-left font-semibold font-heading">
                 Latest News</h4>
 
             <div class="bg-[#1b1f23] rounded-xl border border-gray-800 overflow-hidden shadow-2xl">
@@ -166,7 +182,7 @@
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank"
-                        class="hidden md:inline-flex items-center px-6 py-2 border border-kth-gold text-kth-gold text-xs font-bold tracking-widest hover:bg-kth-gold hover:text-black transition uppercase rounded">
+                        class="hidden md:inline-flex items-center px-6 py-2 border border-kth-cerulean text-kth-cerulean text-xs font-bold tracking-widest hover:bg-kth-cerulean hover:text-white transition uppercase rounded">
                         Follow
                     </a>
                 </div>
