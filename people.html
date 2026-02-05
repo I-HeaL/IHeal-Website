@@ -40,43 +40,51 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-0 w-full z-100 bg-kth-dark/90 backdrop-blur-md border-b border-gray-800 px-8 py-6 flex justify-between items-center text-white">
+        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
         <a href="index.html"
-            class="text-xl font-light tracking-widest uppercase hover:text-kth-gold transition-all duration-300">
+            class="text-xl font-light tracking-widest uppercase hover:border-kth-gold border-b border-transparent transition-all duration-300">
             KTH <span class="font-bold">I-HeaL</span>
         </a>
-        <div class="hidden md:flex space-x-12 text-sm font-light tracking-widest">
-            <a href="people.html" class="text-kth-gold border-b border-kth-gold uppercase">People</a>
+        <div class="hidden lg:flex space-x-8 text-xs font-light tracking-widest">
+            <a href="index.html" class="hover:text-kth-gold transition duration-300 uppercase">Home</a>
+            <a href="people.html" class="text-kth-gold uppercase border-b border-kth-gold">People</a>
             <a href="research.html" class="hover:text-kth-gold transition duration-300 uppercase">Research</a>
+            <a href="#" class="hover:text-kth-gold transition duration-300 uppercase">Publications</a>
+            <a href="index.html#news" class="hover:text-kth-gold transition duration-300 uppercase">News</a>
             <a href="index.html#join" class="hover:text-kth-gold transition duration-300 uppercase">Join Us</a>
+            <a href="index.html#contact" class="hover:text-kth-gold transition duration-300 uppercase">Contact</a>
         </div>
+        <div class="lg:hidden text-2xl cursor-pointer">&#9776;</div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="pt-40 pb-20 px-12 text-center md:text-left container mx-auto">
-        <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4">Our Team</h1>
+    <!-- Header -->
+    <header class="pt-40 pb-20 px-6 md:px-12 text-center md:text-left container mx-auto">
+        <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4">Meet the Team</h1>
+        <div class="w-12 h-1 bg-kth-gold mx-auto md:mx-0"></div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-12 pb-24 space-y-24">
+    <main class="container mx-auto px-6 md:px-12 pb-24 space-y-32">
 
         <!-- Principal Investigator -->
         <section>
             <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Principal
                 Investigator</h2>
-            <div class="flex flex-col md:flex-row gap-12 items-center md:items-start">
-                <div class="w-48 h-48 rounded-full overflow-hidden border-2 border-kth-gold/30">
+            <div class="flex flex-col md:flex-row gap-12 items-center md:items-start group">
+                <div
+                    class="w-64 h-64 rounded-full overflow-hidden border-2 border-kth-gold/20 group-hover:border-kth-gold transition duration-500 relative">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop"
                         alt="Seraina Dual"
-                        class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500">
+                        class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-700">
                 </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-2xl text-white font-light tracking-wide mb-2">Seraina Dual</h3>
-                    <p class="text-kth-gold text-sm tracking-widest uppercase mb-4">Assistant Professor, Docent</p>
+                <div class="text-center md:text-left flex-1">
+                    <h3 class="text-3xl text-white font-light tracking-wide mb-2">Seraina Dual</h3>
+                    <p class="text-kth-gold text-sm tracking-widest uppercase mb-1">Assistant Professor, Docent</p>
+                    <p class="text-gray-500 text-xs tracking-wider uppercase mb-6">Dept. of Biomedical Engineering &
+                        Health Systems, KTH</p>
                     <p class="text-gray-400 font-light max-w-2xl leading-relaxed">
-                        Leading the Intelligent Heart Technology Lab within the Department of Engineering Mechanics at
-                        KTH. Her research focuses on the intersection of mechatronics, soft robotics, and cardiovascular
-                        physiology.
+                        Leading the I-HeaL Lab with a vision to integrate seamless technology into clinical workflows.
+                        Her expertise spans mechatronics, soft robotics, and cardiovascular physiology optimization.
                     </p>
                 </div>
             </div>
@@ -86,26 +94,28 @@
         <section>
             <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Postdoctoral
                 Researchers</h2>
-            <div class="grid md:grid-cols-4 gap-12 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 <!-- Swati Panda -->
                 <div class="group">
-                    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border border-gray-700 mb-6 relative">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 relative group-hover:scale-105 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=300&auto=format&fit=crop"
                             alt="Swati Panda"
                             class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1">Swati Panda</h3>
-                    <p class="text-xs text-gray-500 tracking-wider">PostDoc</p>
+                    <p class="text-xs text-kth-gold tracking-wider uppercase">PostDoc</p>
                 </div>
                 <!-- Carina Veil -->
                 <div class="group">
-                    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border border-gray-700 mb-6 relative">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 relative group-hover:scale-105 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop"
                             alt="Carina Veil"
                             class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1">Carina Veil</h3>
-                    <p class="text-xs text-gray-500 tracking-wider">PostDoc</p>
+                    <p class="text-xs text-kth-gold tracking-wider uppercase">PostDoc</p>
                 </div>
             </div>
         </section>
@@ -114,43 +124,46 @@
         <section>
             <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">PhD Students
             </h2>
-            <div class="grid md:grid-cols-4 gap-12 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center">
                 <!-- Aurora Rosato -->
                 <div class="group">
-                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
-                        <!-- Placeholder specific for user if desired, using generic -->
-                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">AR
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900 group-hover:border-gray-600 transition">
+                        <div class="w-full h-full flex items-center justify-center text-gray-700 font-light text-xl">AR
                         </div>
                     </div>
                     <h3 class="text-white font-normal mb-1">Aurora Rosato</h3>
-                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                    <p class="text-[10px] text-gray-500 tracking-widest uppercase">PhD Student</p>
                 </div>
                 <!-- Kyle Mudge -->
                 <div class="group">
-                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
-                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">KM
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900 group-hover:border-gray-600 transition">
+                        <div class="w-full h-full flex items-center justify-center text-gray-700 font-light text-xl">KM
                         </div>
                     </div>
                     <h3 class="text-white font-normal mb-1">Kyle Mudge</h3>
-                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                    <p class="text-[10px] text-gray-500 tracking-widest uppercase">PhD Student</p>
                 </div>
                 <!-- Tien-Ying Lu -->
                 <div class="group">
-                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
-                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">TL
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900 group-hover:border-gray-600 transition">
+                        <div class="w-full h-full flex items-center justify-center text-gray-700 font-light text-xl">TL
                         </div>
                     </div>
                     <h3 class="text-white font-normal mb-1">Tien-Ying Lu</h3>
-                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                    <p class="text-[10px] text-gray-500 tracking-widest uppercase">PhD Student</p>
                 </div>
                 <!-- Fangnan Xu -->
                 <div class="group">
-                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
-                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">FX
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900 group-hover:border-gray-600 transition">
+                        <div class="w-full h-full flex items-center justify-center text-gray-700 font-light text-xl">FX
                         </div>
                     </div>
                     <h3 class="text-white font-normal mb-1">Fangnan Xu</h3>
-                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                    <p class="text-[10px] text-gray-500 tracking-widest uppercase">PhD Student</p>
                 </div>
             </div>
         </section>
@@ -160,13 +173,13 @@
             <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Visiting
                 Professors</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="text-gray-400 font-light">
-                    <strong class="text-white block mb-1">Prof. Dr. Steffen Leonhardt</strong>
-                    RWTH Aachen University
+                <div class="p-6 border border-transparent hover:border-gray-800 rounded transition duration-500">
+                    <h3 class="text-white font-normal text-lg mb-2">Prof. Dr. Steffen Leonhardt</h3>
+                    <p class="text-gray-500 text-sm font-light">RWTH Aachen University</p>
                 </div>
-                <div class="text-gray-400 font-light">
-                    <strong class="text-white block mb-1">Prof. Nicolai Spicher</strong>
-                    University Medical Center Göttingen
+                <div class="p-6 border border-transparent hover:border-gray-800 rounded transition duration-500">
+                    <h3 class="text-white font-normal text-lg mb-2">Prof. Nicolai Spicher</h3>
+                    <p class="text-gray-500 text-sm font-light">University Medical Center Göttingen</p>
                 </div>
             </div>
         </section>
@@ -174,27 +187,35 @@
         <!-- Alumni -->
         <section>
             <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Alumni</h2>
-            <p class="text-gray-500 text-sm font-light italic">Former lab members will be listed here.</p>
+            <div class="text-center py-12 border border-dashed border-gray-800 rounded">
+                <p class="text-gray-600 text-sm font-light italic">Previous lab members and master's thesis graduates.
+                </p>
+            </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-kth-dark py-12 border-t border-gray-900">
+    <footer class="bg-kth-dark py-16 border-t border-gray-900">
         <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
             <div class="mb-8 md:mb-0">
-                <div class="text-white text-lg tracking-widest uppercase font-bold mb-2">KTH I-HeaL</div>
-                <div class="text-gray-500 text-sm font-light">
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4">KTH I-HeaL</div>
+                <div class="text-gray-500 text-sm font-light leading-relaxed">
                     KTH Royal Institute of Technology<br>
                     Hälsovägen 11<br>
                     141 52 Huddinge, Stockholm, Sweden
                 </div>
             </div>
-            <div class="flex space-x-6 text-sm text-gray-500 font-light">
+            <div
+                class="flex flex-col md:flex-row md:items-center gap-6 text-sm text-gray-500 font-light tracking-widest uppercase">
                 <a href="#" class="hover:text-white transition">Search</a>
                 <a href="#" class="hover:text-white transition">Legal</a>
                 <a href="mailto:info@iheal.kth.se" class="hover:text-white transition">Contact</a>
             </div>
+        </div>
+        <div
+            class="container mx-auto px-12 mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-700 font-mono">
+            &copy; 2026 INTELLIGENT HEART TECHNOLOGY LAB
         </div>
     </footer>
 

@@ -40,113 +40,132 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-0 w-full z-100 bg-kth-dark/90 backdrop-blur-md border-b border-gray-800 px-8 py-6 flex justify-between items-center text-white">
+        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
         <a href="index.html"
             class="text-xl font-light tracking-widest uppercase hover:text-kth-gold transition-all duration-300">
             KTH <span class="font-bold">I-HeaL</span>
         </a>
-        <div class="hidden md:flex space-x-12 text-sm font-light tracking-widest">
+        <div class="hidden lg:flex space-x-8 text-xs font-light tracking-widest">
+            <a href="index.html" class="hover:text-kth-gold transition duration-300 uppercase">Home</a>
             <a href="people.html" class="hover:text-kth-gold transition duration-300 uppercase">People</a>
             <a href="research.html" class="text-kth-gold border-b border-kth-gold uppercase">Research</a>
+            <a href="#" class="hover:text-kth-gold transition duration-300 uppercase">Publications</a>
+            <a href="index.html#news" class="hover:text-kth-gold transition duration-300 uppercase">News</a>
             <a href="index.html#join" class="hover:text-kth-gold transition duration-300 uppercase">Join Us</a>
+            <a href="index.html#contact" class="hover:text-kth-gold transition duration-300 uppercase">Contact</a>
         </div>
+        <div class="lg:hidden text-2xl cursor-pointer">&#9776;</div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="pt-40 pb-20 px-12 text-center md:text-left container mx-auto">
+    <!-- Header -->
+    <header class="pt-40 pb-20 px-6 md:px-12 text-center md:text-left container mx-auto">
         <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4">Research Areas</h1>
-        <p class="text-gray-400 max-w-2xl font-light leading-relaxed">
-            Bridging engineering and medicine to create intelligent systems for cardiovascular health.
+        <div class="w-12 h-1 bg-kth-gold mx-auto md:mx-0 mb-6"></div>
+        <p class="text-gray-400 max-w-2xl font-light leading-relaxed mx-auto md:mx-0">
+            Addressing clinical needs through intelligent technological solutions. Our work spans robotics, simulation,
+            and sensor integration to improve cardiovascular health outcomes.
         </p>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-12 pb-24">
+    <main class="container mx-auto px-6 md:px-12 pb-24">
 
         <div class="space-y-32">
 
-            <!-- Area 1 -->
-            <section class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Area 1: Wearables -->
+            <section class="grid md:grid-cols-2 gap-16 items-center group">
                 <div class="order-2 md:order-1">
-                    <span class="text-kth-gold text-xs tracking-widest uppercase block mb-4">Core Focus</span>
-                    <h2 class="text-3xl text-white font-light mb-6">Interactive Wearable Technologies</h2>
-                    <p class="text-gray-400 leading-loose font-light mb-8">
-                        We develop smart, unobtrusive wearable devices that not only monitor cardiovascular markers but
-                        actively interact with the user to support rehabilitation and daily health management. Our focus
-                        is on textile-integrated sensors and soft actuation systems.
+                    <span class="text-kth-gold text-[10px] tracking-[0.2em] uppercase block mb-4">Sensing &
+                        Actuation</span>
+                    <h2 class="text-3xl text-white font-light mb-6 group-hover:text-gray-200 transition">Interactive
+                        Wearable Technologies</h2>
+                    <p class="text-gray-400 leading-loose font-light mb-8 text-sm">
+                        Developing smart, unobtrusive wearable devices for long-term cardiovascular monitoring and
+                        active rehabilitation. We focus on integrating soft sensors into textiles and actuating systems
+                        that provide physical assistance without restricting natural movement.
                     </p>
                     <a href="#"
-                        class="text-white text-xs tracking-widest border-b border-gray-700 pb-1 hover:border-kth-gold hover:text-kth-gold transition">READ
-                        MORE</a>
+                        class="inline-block text-[10px] text-white tracking-[0.2em] border-b border-gray-700 pb-2 hover:border-kth-gold hover:text-kth-gold transition uppercase">Read
+                        More</a>
                 </div>
-                <!-- Image Placeholder -->
+                <!-- Image -->
                 <div
-                    class="order-1 md:order-2 h-80 bg-gray-900 rounded border border-gray-800 flex items-center justify-center text-gray-700">
-                    [Wearable Tech Image]
+                    class="order-1 md:order-2 h-72 md:h-96 bg-gray-900 rounded-sm overflow-hidden relative grayscale group-hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1576091160550-217358c7e618?q=80&w=800&auto=format&fit=crop"
+                        alt="Wearable Tech" class="w-full h-full object-cover opacity-80">
                 </div>
             </section>
 
-            <!-- Area 2 -->
-            <section class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image Placeholder -->
+            <!-- Area 2: Test Rigs -->
+            <section class="grid md:grid-cols-2 gap-16 items-center group">
+                <!-- Image -->
                 <div
-                    class="h-80 bg-gray-900 rounded border border-gray-800 flex items-center justify-center text-gray-700">
-                    [Mock Loop Lab Setup]
+                    class="h-72 md:h-96 bg-gray-900 rounded-sm overflow-hidden relative grayscale group-hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop"
+                        alt="Lab Setup" class="w-full h-full object-cover opacity-80">
                 </div>
                 <div>
-                    <span class="text-kth-gold text-xs tracking-widest uppercase block mb-4">Experimental</span>
-                    <h2 class="text-3xl text-white font-light mb-6">Hybrid Mock Circulatory Loops</h2>
-                    <p class="text-gray-400 leading-loose font-light mb-8">
-                        Home to Scandinavia's first hybrid mock circulatory loop, we perform advanced testing of cardiac
-                        assist devices. Our test-rigs combine physical fluid dynamics with computational models to
-                        simulate patient-specific hemodynamic conditions, including specialized setups for women and
-                        pediatric patients.
+                    <span class="text-kth-gold text-[10px] tracking-[0.2em] uppercase block mb-4">Experimental</span>
+                    <h2 class="text-3xl text-white font-light mb-6 group-hover:text-gray-200 transition">Test-rigs for
+                        Patient-Specific Insight</h2>
+                    <p class="text-gray-400 leading-loose font-light mb-8 text-sm">
+                        Home to <strong class="text-white font-normal">Scandinavia's first hybrid mock circulatory
+                            loop</strong>. We combine physical fluid dynamics with real-time computational models to
+                        simulate patient-specific hemodynamic conditions. This unique setup allows for the precise
+                        evaluation of cardiac assist devices under realistic physiological loads.
                     </p>
                     <a href="#"
-                        class="text-white text-xs tracking-widest border-b border-gray-700 pb-1 hover:border-kth-gold hover:text-kth-gold transition">READ
-                        MORE</a>
+                        class="inline-block text-[10px] text-white tracking-[0.2em] border-b border-gray-700 pb-2 hover:border-kth-gold hover:text-kth-gold transition uppercase">Read
+                        More</a>
                 </div>
             </section>
 
-            <!-- Area 3 -->
-            <section class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Area 3: TAH -->
+            <section class="grid md:grid-cols-2 gap-16 items-center group">
                 <div class="order-2 md:order-1">
-                    <span class="text-kth-gold text-xs tracking-widest uppercase block mb-4">Grant: VINNOVA</span>
-                    <h2 class="text-3xl text-white font-light mb-6">Total Artificial Heart</h2>
-                    <p class="text-gray-400 leading-loose font-light mb-8">
-                        Pre-clinical evaluation of Total Artificial Heart (TAH) systems. We investigate the hemodynamic
-                        impact of TAH implantation and optimize control strategies to minimize complications such as
-                        thrombosis and hemolysis.
+                    <span class="text-kth-gold text-[10px] tracking-[0.2em] uppercase block mb-4">Total Artificial
+                        Heart</span>
+                    <h2 class="text-3xl text-white font-light mb-6 group-hover:text-gray-200 transition">Pre-clinical
+                        Evaluation</h2>
+                    <p class="text-gray-400 leading-loose font-light mb-8 text-sm">
+                        Investigating the biomechanical interactions between Total Artificial Heart (TAH) systems and
+                        the anatomical environment. We aim to optimize control algorithms to reduce adverse events such
+                        as hemolysis and thrombosis.
                     </p>
-                    <div class="mt-4 flex items-center space-x-4">
-                        <span class="text-xs text-gray-600 uppercase tracking-widest">Contact: Fangnan Xu</span>
+                    <div class="flex flex-col space-y-2 text-[10px] tracking-widest text-gray-500 uppercase">
+                        <div>Contact: <span class="text-white">Fangnan Xu</span></div>
+                        <div>Grant: <span class="text-white">Vinnova</span></div>
                     </div>
                 </div>
-                <!-- Image Placeholder -->
+                <!-- Image -->
                 <div
-                    class="order-1 md:order-2 h-80 bg-gray-900 rounded border border-gray-800 flex items-center justify-center text-gray-700">
-                    [Artificial Heart Model]
+                    class="order-1 md:order-2 h-72 md:h-96 bg-gray-900 rounded-sm overflow-hidden relative grayscale group-hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1628595351029-c2bf175a1469?q=80&w=800&auto=format&fit=crop"
+                        alt="Artificial Heart" class="w-full h-full object-cover opacity-80">
                 </div>
             </section>
 
-            <!-- Area 4 -->
-            <section class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image Placeholder -->
+            <!-- Area 4: Modeling -->
+            <section class="grid md:grid-cols-2 gap-16 items-center group">
+                <!-- Image -->
                 <div
-                    class="h-80 bg-gray-900 rounded border border-gray-800 flex items-center justify-center text-gray-700">
-                    [Digital Twin Visualization]
+                    class="h-72 md:h-96 bg-gray-900 rounded-sm overflow-hidden relative grayscale group-hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?q=80&w=800&auto=format&fit=crop"
+                        alt="Computational Model" class="w-full h-full object-cover opacity-80">
                 </div>
                 <div>
-                    <span class="text-kth-gold text-xs tracking-widest uppercase block mb-4">Computational</span>
-                    <h2 class="text-3xl text-white font-light mb-6">Patient-Specific Modeling</h2>
-                    <p class="text-gray-400 leading-loose font-light mb-8">
-                        Utilizing Lumped Parameter Models (LPM) and data-driven methods to create Digital Twins of the
-                        cardiovascular system. These models enable non-invasive diagnosis and the prediction of
-                        treatment outcomes for heart failure patients.
+                    <span class="text-kth-gold text-[10px] tracking-[0.2em] uppercase block mb-4">Computational
+                        Analysis</span>
+                    <h2 class="text-3xl text-white font-light mb-6 group-hover:text-gray-200 transition">
+                        Patient-Specific Modeling</h2>
+                    <p class="text-gray-400 leading-loose font-light mb-8 text-sm">
+                        Developing advanced <strong>Lumped Parameter Models (LPM)</strong> and Digital Twins to simulate
+                        complex cardiovascular pathologies. These models facilitate non-invasive diagnostics and allow
+                        clinicians to predict the outcome of surgical interventions before entering the operating room.
                     </p>
                     <a href="#"
-                        class="text-white text-xs tracking-widest border-b border-gray-700 pb-1 hover:border-kth-gold hover:text-kth-gold transition">READ
-                        MORE</a>
+                        class="inline-block text-[10px] text-white tracking-[0.2em] border-b border-gray-700 pb-2 hover:border-kth-gold hover:text-kth-gold transition uppercase">Read
+                        More</a>
                 </div>
             </section>
         </div>
@@ -154,21 +173,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-kth-dark py-12 border-t border-gray-900">
+    <footer class="bg-kth-dark py-16 border-t border-gray-900">
         <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
             <div class="mb-8 md:mb-0">
-                <div class="text-white text-lg tracking-widest uppercase font-bold mb-2">KTH I-HeaL</div>
-                <div class="text-gray-500 text-sm font-light">
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4">KTH I-HeaL</div>
+                <div class="text-gray-500 text-sm font-light leading-relaxed">
                     KTH Royal Institute of Technology<br>
                     Hälsovägen 11<br>
                     141 52 Huddinge, Stockholm, Sweden
                 </div>
             </div>
-            <div class="flex space-x-6 text-sm text-gray-500 font-light">
+            <div
+                class="flex flex-col md:flex-row md:items-center gap-6 text-sm text-gray-500 font-light tracking-widest uppercase">
                 <a href="#" class="hover:text-white transition">Search</a>
                 <a href="#" class="hover:text-white transition">Legal</a>
                 <a href="mailto:info@iheal.kth.se" class="hover:text-white transition">Contact</a>
             </div>
+        </div>
+        <div
+            class="container mx-auto px-12 mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-700 font-mono">
+            &copy; 2026 INTELLIGENT HEART TECHNOLOGY LAB
         </div>
     </footer>
 
