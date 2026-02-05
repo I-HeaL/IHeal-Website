@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | I-HeaL Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        kth: {
+                            gold: '#C49F30',
+                            dark: '#0a0a0a',
+                            slate: '#1e293b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Roboto', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-kth-dark text-gray-200 antialiased selection:bg-kth-gold selection:text-black">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 w-full z-100 bg-kth-dark/90 backdrop-blur-md border-b border-gray-800 px-8 py-6 flex justify-between items-center text-white">
+        <a href="index.html"
+            class="text-xl font-light tracking-widest uppercase hover:text-kth-gold transition-all duration-300">
+            KTH <span class="font-bold">I-HeaL</span>
+        </a>
+        <div class="hidden md:flex space-x-12 text-sm font-light tracking-widest">
+            <a href="people.html" class="text-kth-gold border-b border-kth-gold uppercase">People</a>
+            <a href="research.html" class="hover:text-kth-gold transition duration-300 uppercase">Research</a>
+            <a href="index.html#join" class="hover:text-kth-gold transition duration-300 uppercase">Join Us</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-40 pb-20 px-12 text-center md:text-left container mx-auto">
+        <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4">Our Team</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-12 pb-24 space-y-24">
+
+        <!-- Principal Investigator -->
+        <section>
+            <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Principal
+                Investigator</h2>
+            <div class="flex flex-col md:flex-row gap-12 items-center md:items-start">
+                <div class="w-48 h-48 rounded-full overflow-hidden border-2 border-kth-gold/30">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop"
+                        alt="Seraina Dual"
+                        class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500">
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl text-white font-light tracking-wide mb-2">Seraina Dual</h3>
+                    <p class="text-kth-gold text-sm tracking-widest uppercase mb-4">Assistant Professor, Docent</p>
+                    <p class="text-gray-400 font-light max-w-2xl leading-relaxed">
+                        Leading the Intelligent Heart Technology Lab within the Department of Engineering Mechanics at
+                        KTH. Her research focuses on the intersection of mechatronics, soft robotics, and cardiovascular
+                        physiology.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PostDocs -->
+        <section>
+            <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Postdoctoral
+                Researchers</h2>
+            <div class="grid md:grid-cols-4 gap-12 text-center">
+                <!-- Swati Panda -->
+                <div class="group">
+                    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border border-gray-700 mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=300&auto=format&fit=crop"
+                            alt="Swati Panda"
+                            class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1">Swati Panda</h3>
+                    <p class="text-xs text-gray-500 tracking-wider">PostDoc</p>
+                </div>
+                <!-- Carina Veil -->
+                <div class="group">
+                    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border border-gray-700 mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop"
+                            alt="Carina Veil"
+                            class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1">Carina Veil</h3>
+                    <p class="text-xs text-gray-500 tracking-wider">PostDoc</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PhD Students -->
+        <section>
+            <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">PhD Students
+            </h2>
+            <div class="grid md:grid-cols-4 gap-12 text-center">
+                <!-- Aurora Rosato -->
+                <div class="group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
+                        <!-- Placeholder specific for user if desired, using generic -->
+                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">AR
+                        </div>
+                    </div>
+                    <h3 class="text-white font-normal mb-1">Aurora Rosato</h3>
+                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                </div>
+                <!-- Kyle Mudge -->
+                <div class="group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
+                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">KM
+                        </div>
+                    </div>
+                    <h3 class="text-white font-normal mb-1">Kyle Mudge</h3>
+                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                </div>
+                <!-- Tien-Ying Lu -->
+                <div class="group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
+                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">TL
+                        </div>
+                    </div>
+                    <h3 class="text-white font-normal mb-1">Tien-Ying Lu</h3>
+                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                </div>
+                <!-- Fangnan Xu -->
+                <div class="group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border border-gray-800 mb-6 bg-gray-900">
+                        <div class="w-full h-full flex items-center justify-center text-gray-600 font-bold text-2xl">FX
+                        </div>
+                    </div>
+                    <h3 class="text-white font-normal mb-1">Fangnan Xu</h3>
+                    <p class="text-xs text-gray-500 tracking-wider">PhD Student</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visitors -->
+        <section>
+            <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Visiting
+                Professors</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="text-gray-400 font-light">
+                    <strong class="text-white block mb-1">Prof. Dr. Steffen Leonhardt</strong>
+                    RWTH Aachen University
+                </div>
+                <div class="text-gray-400 font-light">
+                    <strong class="text-white block mb-1">Prof. Nicolai Spicher</strong>
+                    University Medical Center Göttingen
+                </div>
+            </div>
+        </section>
+
+        <!-- Alumni -->
+        <section>
+            <h2 class="text-kth-gold text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4">Alumni</h2>
+            <p class="text-gray-500 text-sm font-light italic">Former lab members will be listed here.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-kth-dark py-12 border-t border-gray-900">
+        <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
+            <div class="mb-8 md:mb-0">
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-2">KTH I-HeaL</div>
+                <div class="text-gray-500 text-sm font-light">
+                    KTH Royal Institute of Technology<br>
+                    Hälsovägen 11<br>
+                    141 52 Huddinge, Stockholm, Sweden
+                </div>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-500 font-light">
+                <a href="#" class="hover:text-white transition">Search</a>
+                <a href="#" class="hover:text-white transition">Legal</a>
+                <a href="mailto:info@iheal.kth.se" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
