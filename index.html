@@ -1,279 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KTH I-HeaL Laboratory | Engineering for Health & Life</title>
+    <title>I-HeaL | Intelligent Heart Technology Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         kth: {
-                            blue: '#1954A6',
-                            dark: '#002661',
                             gold: '#C49F30',
-                            gray: '#E6E6E6',
-                            light: '#F9FAFB',
+                            dark: '#0a0a0a', /* Slightly softer than pure black */
+                            slate: '#1e293b',
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'Roboto', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
-<body class="bg-kth-light text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo Area -->
-            <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-kth-blue text-white flex items-center justify-center font-bold text-xl rounded-full">
-                    KTH
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-kth-dark text-lg leading-tight">I-HeaL Laboratory</span>
-                    <span class="text-xs text-gray-500 uppercase tracking-wide">Innovation for Health & Life</span>
-                </div>
-            </div>
+<body class="bg-kth-dark text-gray-200 antialiased selection:bg-kth-gold selection:text-black">
 
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#research" class="text-gray-600 hover:text-kth-blue font-medium transition">Research</a>
-                <a href="#team" class="text-gray-600 hover:text-kth-blue font-medium transition">Team</a>
-                <a href="#publications" class="text-gray-600 hover:text-kth-blue font-medium transition">Publications</a>
-                <a href="#contact" class="text-gray-600 hover:text-kth-blue font-medium transition">Contact</a>
-            </nav>
+    <!-- Navbar (Minimalist Top Menu) -->
+    <nav class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white">
+        <!-- Logo Text -->
+        <a href="#"
+            class="text-xl font-light tracking-widest uppercase border-b border-transparent hover:border-kth-gold transition-all duration-300">
+            KTH <span class="font-bold">I-HeaL</span>
+        </a>
 
-            <!-- Mobile Menu Button (Visible only on mobile) -->
-            <button class="md:hidden text-gray-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
+        <!-- Right Menu -->
+        <div class="hidden md:flex space-x-12 text-sm font-light tracking-widest">
+            <a href="#people" class="hover:text-kth-gold transition duration-300 uppercase">People</a>
+            <a href="#research" class="hover:text-kth-gold transition duration-300 uppercase">Research</a>
+            <a href="#join" class="hover:text-kth-gold transition duration-300 uppercase">Join Us</a>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-kth-dark text-white py-24 lg:py-32 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    Engineering the Future of <span class="text-kth-gold">Healthcare</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-2xl">
-                    Bridging the gap between advanced engineering and clinical reality. We develop next-generation biomedical devices and computational models at KTH Royal Institute of Technology.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#research" class="bg-kth-gold text-kth-dark font-bold py-3 px-8 rounded hover:bg-yellow-500 transition shadow-lg text-center">
-                        View Our Research
-                    </a>
-                    <a href="#join" class="border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-kth-dark transition text-center">
-                        Work With Us
-                    </a>
-                </div>
-            </div>
+        <!-- Mobile Menu Icon (Hamburger) -->
+        <div class="md:hidden text-2xl cursor-pointer">
+            &#9776;
         </div>
-    </section>
+    </nav>
 
-    <!-- Social Proof -->
-    <section class="py-10 bg-white border-b border-gray-100">
-        <div class="container mx-auto px-6">
-            <p class="text-center text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Trusted Partners & Collaborators</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Placeholders for Logos -->
-                <div class="font-bold text-xl text-gray-400">ERICSSON</div>
-                <div class="font-bold text-xl text-gray-400">ABB</div>
-                <div class="font-bold text-xl text-gray-400">SCANIA</div>
-                <div class="font-bold text-xl text-gray-400">Karolinska Institutet</div>
-                <div class="font-bold text-xl text-gray-400">Vinnova</div>
-            </div>
+    <!-- Hero Section (Full Screen) -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Using a cardiac/network abstract image to fit "Intelligent Heart Technology" -->
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
+                alt="Lab Background" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-b from-kth-dark/80 via-transparent to-kth-dark"></div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-kth-light">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 relative">
-                    <div class="w-full h-80 bg-gray-300 rounded-lg shadow-xl overflow-hidden relative z-10">
-                         <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80" alt="Lab Environment" class="w-full h-full object-cover">
-                    </div>
-                    <!-- Decorative back layer -->
-                    <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-kth-blue rounded-lg -z-0 hidden md:block"></div>
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-kth-dark mb-6">Pioneering Interdisciplinary Research</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        The I-HeaL (Innovation for Health and Life) Laboratory operates at the intersection of mechanical engineering, sensor technology, and life sciences.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Our mission is to translate complex biological problems into engineering solutions. From biomechanics to personalized medicine, our diverse team of engineers and clinicians work together to improve patient outcomes worldwide.
-                    </p>
-                    <a href="#about-more" class="text-kth-blue font-bold hover:underline flex items-center">
-                        Read more about our mission 
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features / Research Areas -->
-    <section id="research" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-kth-dark mb-4">Core Competencies</h2>
-                <div class="w-16 h-1 bg-kth-gold mx-auto"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-gray-50 p-8 rounded-lg border border-gray-100 hover:shadow-lg transition group">
-                    <div class="w-12 h-12 bg-blue-100 text-kth-blue rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-kth-blue group-hover:text-white transition">
-                        🤖
-                    </div>
-                    <h3 class="text-xl font-bold text-kth-dark mb-3">Medical Robotics</h3>
-                    <p class="text-gray-600 mb-4">
-                        Developing assist-as-needed exoskeletons and rehabilitative robotic systems for neuromuscular recovery.
-                    </p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="bg-gray-50 p-8 rounded-lg border border-gray-100 hover:shadow-lg transition group">
-                    <div class="w-12 h-12 bg-blue-100 text-kth-blue rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-kth-blue group-hover:text-white transition">
-                        🧠
-                    </div>
-                    <h3 class="text-xl font-bold text-kth-dark mb-3">Computational Health</h3>
-                    <p class="text-gray-600 mb-4">
-                        AI-driven models for predictive diagnostics and personalized treatment planning based on patient data.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-gray-50 p-8 rounded-lg border border-gray-100 hover:shadow-lg transition group">
-                    <div class="w-12 h-12 bg-blue-100 text-kth-blue rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-kth-blue group-hover:text-white transition">
-                        🧬
-                    </div>
-                    <h3 class="text-xl font-bold text-kth-dark mb-3">Bio-Signal Processing</h3>
-                    <p class="text-gray-600 mb-4">
-                        Advanced sensor integration for real-time monitoring of physiological signals in ambulatory settings.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content Section: Recent News -->
-    <section class="py-20 bg-kth-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold text-kth-dark mb-8">Latest from the Lab</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- News Item 1 -->
-                <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-gray-300">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80" alt="Conference" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="text-xs text-kth-blue font-bold mb-2">OCT 12, 2025</div>
-                        <h3 class="font-bold text-lg mb-2">Keynote at IEEE BioRob 2025</h3>
-                        <p class="text-gray-600 text-sm">Prof. Anderson presented our latest findings on soft robotics...</p>
-                    </div>
-                </article>
-                <!-- News Item 2 -->
-                <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-gray-300">
-                        <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&q=80" alt="New Grant" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="text-xs text-kth-blue font-bold mb-2">SEP 28, 2025</div>
-                        <h3 class="font-bold text-lg mb-2">New Grant from VR</h3>
-                        <p class="text-gray-600 text-sm">I-HeaL secures 5M SEK for sustainable medical device research...</p>
-                    </div>
-                </article>
-                 <!-- News Item 3 -->
-                 <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-gray-300">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80" alt="Team" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="text-xs text-kth-blue font-bold mb-2">SEP 15, 2025</div>
-                        <h3 class="font-bold text-lg mb-2">Welcome Dr. Sato</h3>
-                        <p class="text-gray-600 text-sm">Joining us from MIT to lead the Neural Interface group...</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lead Magnet -->
-    <section class="py-20 bg-kth-blue text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Interest in our Research?</h2>
-            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
-                Download our 2024 Annual Report to see detailed project breakdowns, publication lists, and future roadmaps.
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center max-w-5xl mx-auto mt-[-10vh]">
+            <h2 class="text-kth-gold text-sm md:text-base tracking-[0.3em] uppercase mb-6 animate-fade-in-up">
+                Department of Engineering Mechanics
+            </h2>
+            <h1 class="text-6xl md:text-8xl font-thin tracking-tighter mb-4 text-white">
+                I-HeaL
+            </h1>
+            <p
+                class="text-xl md:text-2xl font-light tracking-[0.15em] text-gray-400 uppercase mb-16 border-b border-gray-800 inline-block pb-6 px-12">
+                Intelligent Heart Technology Lab
             </p>
-            <div class="bg-white/10 p-8 rounded-lg max-w-lg mx-auto backdrop-blur-sm border border-white/20">
-                <form class="flex flex-col gap-4">
-                    <input type="email" placeholder="Enter your academic email" class="w-full px-4 py-3 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-kth-gold">
-                    <button type="submit" class="w-full bg-kth-gold text-kth-dark font-bold py-3 rounded hover:bg-yellow-500 transition">
-                        Download Annual Report
-                    </button>
-                </form>
-                <p class="text-xs text-blue-200 mt-4">We respect your privacy. No spam.</p>
+
+            <blockquote class="text-lg md:text-2xl font-light leading-relaxed max-w-4xl mx-auto text-gray-300 italic">
+                "We are motivated by clinical needs which we address with a variety of intelligent technological
+                solutions. In turn, our approach allows us to improve understanding of system-level cardiovascular
+                physiology."
+            </blockquote>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Navigation Grid / Tabs -->
+    <section id="explore" class="bg-kth-dark relative z-10 border-t border-gray-900">
+        <div class="grid md:grid-cols-3 min-h-[50vh]">
+
+            <!-- Card 1: People -->
+            <a href="#people"
+                class="group relative block border-r border-gray-900 p-12 md:p-20 hover:bg-gray-900 transition-colors duration-500 overflow-hidden">
+                <div
+                    class="absolute top-8 right-8 text-gray-700 opacity-20 group-hover:opacity-10 transition-opacity duration-500 scale-150">
+                    <!-- Icon: Users -->
+                    <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="relative z-10 h-full flex flex-col justify-end">
+                    <h3
+                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-gold transition-colors">
+                        People</h3>
+                    <div
+                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-gold transition-all duration-700">
+                    </div>
+                    <p class="text-sm text-gray-500 font-light leading-loose">
+                        Meet the diverse team of engineers and clinicians driving our research forward.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card 2: Research -->
+            <a href="#research"
+                class="group relative block border-r border-gray-900 p-12 md:p-20 hover:bg-gray-900 transition-colors duration-500 overflow-hidden">
+                <div
+                    class="absolute top-8 right-8 text-gray-700 opacity-20 group-hover:opacity-10 transition-opacity duration-500 scale-150">
+                    <!-- Icon: Book/Research -->
+                    <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="relative z-10 h-full flex flex-col justify-end">
+                    <h3
+                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-gold transition-colors">
+                        Research</h3>
+                    <div
+                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-gold transition-all duration-700">
+                    </div>
+                    <p class="text-sm text-gray-500 font-light leading-loose">
+                        Exploring biomechanics, computational modeling, and medical device innovation.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card 3: Join Us -->
+            <a href="#join"
+                class="group relative block p-12 md:p-20 hover:bg-gray-900 transition-colors duration-500 overflow-hidden">
+                <div
+                    class="absolute top-8 right-8 text-gray-700 opacity-20 group-hover:opacity-10 transition-opacity duration-500 scale-150">
+                    <!-- Icon: User Add -->
+                    <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="relative z-10 h-full flex flex-col justify-end">
+                    <h3
+                        class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-gold transition-colors">
+                        Join Us</h3>
+                    <div
+                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-gold transition-all duration-700">
+                    </div>
+                    <p class="text-sm text-gray-500 font-light leading-loose">
+                        Opportunities for PhD students, post-docs, and thesis projects.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Refactored Content Sections (Simplified for Minimalist Theme) -->
+
+    <!-- Research Highlights (Formerly Key Features) -->
+    <section id="research-highlights" class="py-24 bg-black">
+        <div class="container mx-auto px-12">
+            <h4 class="text-kth-gold text-xs tracking-widest uppercase mb-12">Research Areas</h4>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Highlight 1 -->
+                <div>
+                    <h3 class="text-2xl text-white font-light mb-4">Soft Tissue Biomechanics</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Characterizing the mechanical properties of cardiac tissue to inform better device design and
+                        surgical interventions.
+                    </p>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div>
+                    <h3 class="text-2xl text-white font-light mb-4">Minimally Invasive Devices</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Engineering novel tools for catheter-based procedures that reduce patient trauma and recovery
+                        time.
+                    </p>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div>
+                    <h3 class="text-2xl text-white font-light mb-4">Computational Modeling (FEM)</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Using Finite Element Methods to simulate heart function and predict the efficacy of various
+                        treatments.
+                    </p>
+                </div>
+
+                <!-- Highlight 4 -->
+                <div>
+                    <h3 class="text-2xl text-white font-light mb-4">Patient-Specific Simulation</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        Creating digital twins of patient hearts to personalize therapy planning and risk assessment.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
-            <div>
-                <div class="text-white font-bold text-xl mb-4">KTH I-HeaL</div>
-                <p class="text-sm">
+    <!-- Footer (Minimalist) -->
+    <footer class="bg-kth-dark py-12 border-t border-gray-900">
+        <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
+
+            <div class="mb-8 md:mb-0">
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-2">KTH I-HeaL</div>
+                <div class="text-gray-500 text-sm font-light">
                     KTH Royal Institute of Technology<br>
-                    Brinellvägen 8<br>
-                    114 28 Stockholm, Sweden
-                </p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-white">About KTH</a></li>
-                    <li><a href="#" class="hover:text-white">Department of Engineering</a></li>
-                    <li><a href="#" class="hover:text-white">Student Opportunities</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Legal</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-white">Accessibility</a></li>
-                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white">Cookie Settings</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Contact</h4>
-                <p class="text-sm mb-4">info@iheal.kth.se</p>
-                <div class="flex space-x-4">
-                    <!-- Social Icons -->
-                    <a href="#" class="hover:text-white">LinkedIn</a>
-                    <a href="#" class="hover:text-white">Twitter</a>
+                    Stockholm, Sweden
                 </div>
             </div>
-        </div>
-        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-xs">
-            © 2026 KTH Royal Institute of Technology. All rights reserved.
+
+            <div class="flex space-x-6 text-sm text-gray-500 font-light">
+                <a href="#" class="hover:text-white transition">Search</a>
+                <a href="#" class="hover:text-white transition">Legal</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+
         </div>
     </footer>
 
 </body>
+
 </html>
