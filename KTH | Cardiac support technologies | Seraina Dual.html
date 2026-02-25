@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>KTH | Cardiac support technologies | Seraina Dual</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfoliosida Cardiac support technologies av Seraina Dual">
+
+  <meta name="category" content="kth-profile" />
+  
+  <link rel="shortcut icon" id="favicon" href="/profile/static/icon/favicon">
+
+
+  
+  
+  
+  <link href="/profile/static/kth-style/css/kth-bootstrap.css?v=3.0.0-20260214.1_5aa32464" media="screen" rel="stylesheet">
+<link href="/profile/assets/fonts.css?v=3.0.0-20260214.1_5aa32464" media="screen" rel="stylesheet">
+<link href="/profile/static/app.css?v=3.0.0-20260214.1_5aa32464" media="screen" rel="stylesheet">
+
+    
+
+
+
+
+  <!-- Begin JavaScript contentId-1_1137647 -->
+  <script>/* global klaroConfig */
+var klaroConfig = {
+    testing: false,
+  acceptAll: true,
+  styling: {
+      theme: [],
+  },
+  htmlTexts: false,
+  groupByPurpose: false,
+  storageMethod: 'cookie',
+  cookieDomain: 'kth.se',
+  cookieExpiresAfterDays: 30,
+  hideDeclineAll: false,
+  translations: {
+      sv: {
+          service: {
+            disableAll: {
+              description: 'Använd detta reglage för att tillåta alla tjänster eller endast nödvändiga.',
+              title: 'Ändra för alla tjänster',
+            },
+          },
+          consentModal: {
+            description:
+              'Här kan du se och anpassa vilken information vi samlar om dig.',
+          },
+          privacyPolicy: {
+              name: 'kakor',
+              text: 'Läs mer om hur vi hanterar {privacyPolicy}.',
+          },
+          privacyPolicyUrl: 'https://www.kth.se/gemensamt/om-kakor-cookies-pa-kth-s-webbplats-1.844',
+          consentNotice: {
+              title: '',
+              testing: '',
+              description: 'Denna webbplats använder tjänster som kan lagra information om dig och hur du använder denna webbplats. Vissa tjänster är nödvändiga för att webbplatsen ska fungera och andra är valbara.',
+              learnMore: 'Hantera valbara tjänster',
+          },
+          decline: 'Tillåt bara nödvändiga tjänster',
+          ok: 'Tillåt alla tjänster',
+          purposeItem: {
+              service: 'Tjänster'
+          },
+            contextualConsent:{
+                acceptAlways: 'Alltid',
+                acceptOnce: 'Ja',
+                description: 'Du har tidigare nekat visning av innehåll av typen "{title}". Vill du visa innehållet?',
+          }
+      },
+      en: {
+          service: {
+            disableAll: {
+              description: 'Use this slider to allow all cookies or only necessary.',
+              title: 'Change for all services',
+            },
+          },
+        consentModal: {
+            description:
+              'Here you can assess and customise the services we use on this website.',
+          },
+          privacyPolicy: {
+              name: 'cookies',
+              text: 'Find out more about our usage of {privacyPolicy}.',
+          },
+          privacyPolicyUrl: 'https://www.kth.se/en/gemensamt/om-kakor-cookies-pa-kth-s-webbplats-1.844',
+          consentNotice: {
+              title: '',
+              testing: '',
+              description: 'This website uses services that may store information about you and how you use the website. Some services are necessary for the website to work, and others are optional.',
+              learnMore: 'Manage services',
+          },
+          decline: 'Accept only necessary services',
+          ok: 'Accept all services',
+          purposeItem: {
+              service: 'Services'
+          },
+            contextualConsent:{
+                acceptAlways: 'Always',
+                acceptOnce: 'Yes',
+                description: 'You have previously denied the display of content of the type "{title}". Do you want to show content?',
+          }
+      }
+  },
+  services: [
+      {
+          name: "required-consent",
+          default: true,
+          contextualConsentOnly: false,
+          required: true,
+          translations: {
+              zz: {
+                  title: 'Required Services',
+                  description: 'These services are necessary for the site to function and cannot be turned off. They are usually used when you utilise a function on the website that needs an answer, such as setting cookies, logging in, or filling in a form.'
+              },
+              sv: {
+                  title: 'Nödvändiga tjänster',
+                  description: 'Dessa tjänster är nödvändiga för att webbplatsen ska fungera och kan inte stängas av. De används främst när du nyttjar en funktion på webbplatsen som behöver ett svar, exempelvis ställer in kakor, loggar in eller fyller i formulär.'
+              },
+          },
+      },
+      {
+          name: "media-consent",
+          default: false,
+          translations: {
+              zz: {
+                  title: 'External media',
+                  description: 'Media on the site embedded from external providers like Youtube, Vimeo and Kaltura. When these are played, the providers may use cookies and local storage.'
+              },
+              sv: {
+                  title: 'Extern media',
+                  description: 'Inbäddad media från externa leverantörer som Youtube, Vimeo och Kaltura. När media spelas upp kan leverantörerna använda sig av kakor och lokal lagring.'
+              },
+          },
+      },
+      {
+        name: "service-consent",
+        default: false,
+        translations: {
+          zz: {
+            title: 'External Services',
+            description: 'Embedded services by external providers such as forms, maps, chat applications et c. When these are loaded, the providers may use cookies and local storage.'
+          },
+          sv: {
+            title: 'Externa tjänster',
+            description: 'Inbäddade tjänster från externa leverantörer såsom formulär, kartor, chat-funktion et c. När tjänsterna laddas in kan leverantörerna använda sig av kakor och lokal lagring.'
+          },
+        },
+      },
+      {
+          name: "analytics-consent",
+          default: false,
+          translations: {
+              zz: {
+                  title: 'Analytics and Tracking',
+                  description: 'The website uses Matomo to evaluate and improve the website content, experience and structure. The information collected is anonymised and only stored at KTH servers.'
+              },
+              sv: {
+                  title: 'Analys och spårning',
+                  description: 'Webbplatsen använder Matomo för att utvärdera och förbättra webbplatsens innehåll, upplevelse och struktur. Insamlandet av informationen anonymiseras och lagras enbart på KTH-servrar.'
+              },
+          },
+      },
+      {
+        name: "marketing-consent",
+        default: false,
+        translations: {
+            zz: {
+                title: 'Marketing',
+                description: 'The website contains pages that, via cookies, communicate with advertising services and social media.'
+            },
+            sv: {
+                title: 'Marknadsföring',
+                description: 'På webbplatsen förekommer sidor som via kakor kommunicerar med annonseringstjänster och sociala medier.'
+            },
+        },
+    }
+    
+  ]
+}</script>
+  
+  
+  <!-- End JavaScript contentId-1_1137647 -->
+
+
+
+    
+
+  
+  
+  
+  
+  <script src="/profile/static/kth-style/js/klaro-no-css.js?v=3.0.0-20260214.1_5aa32464"></script>
+<script src="/profile/static/vendor.js?v=3.0.0-20260214.1_5aa32464"></script>
+<script src="/profile/static/browserConfig?v=3.0.0-20260214.1_5aa32464"></script>
+<script src="/profile/static/kth-style/js/backtotop.js?v=3.0.0-20260214.1_5aa32464"></script>
+
+  <script src="https://app.kth.se/kpm/kpm.js" async></script>
+</head>
+
+<body>
+  <a class="skipToMainContent" href="#mainContent" tabindex="1">Skip to main content</a>
+  <!--indexOff: all-->
+  
+  <header class="kth-header external">
+    <div class="kth-header__container">
+      <a href="/" class="kth-logotype">
+        <figure>
+          <img alt="Back to KTH start page" width="64" height="64" src="/profile/assets/logotype/logotype-white.svg">   
+       </figure>
+      </a>
+      
+  
+  
+  
+  
+  
+    <nav class="kth-mega-menu" aria-label="Main menu" data-ajax-path="/cm/1.855134?l=en&amp;contentIdPath=/2.10/1.855134/&amp;target=">
+      <ul>
+        
+          <li><button data-id="1.202249" class="kth-menu-item dropdown">
+              <span>
+                Studies
+              </span>
+            </button>
+            <dialog class="kth-menu-panel">
+              <div class="kth-menu-panel__container">
+                <div class="kth-menu-panel__header">
+                  <div>
+                    <a href="/en/studies">
+                      <h2>
+                        Studies
+                      </h2>
+                    </a>
+                  </div>
+                  <button class="kth-icon-button close" title="Close" aria-label="Close">
+                    <span class="kth-visually-hidden">close</span>
+                  </button>
+                </div>
+                <div class="kth-menu-panel__content"></div>
+              </div>
+            </dialog>
+          </li>
+          <li><button data-id="1.202250" class="kth-menu-item dropdown">
+              <span>
+                Research
+              </span>
+            </button>
+            <dialog class="kth-menu-panel">
+              <div class="kth-menu-panel__container">
+                <div class="kth-menu-panel__header">
+                  <div>
+                    <a href="/en/forskning">
+                      <h2>
+                        Research
+                      </h2>
+                    </a>
+                  </div>
+                  <button class="kth-icon-button close" title="Close" aria-label="Close">
+                    <span class="kth-visually-hidden">close</span>
+                  </button>
+                </div>
+                <div class="kth-menu-panel__content"></div>
+              </div>
+            </dialog>
+          </li>
+          <li><button data-id="1.202255" class="kth-menu-item dropdown">
+              <span>
+                Collaboration
+              </span>
+            </button>
+            <dialog class="kth-menu-panel">
+              <div class="kth-menu-panel__container">
+                <div class="kth-menu-panel__header">
+                  <div>
+                    <a href="/en/samverkan">
+                      <h2>
+                        Collaboration
+                      </h2>
+                    </a>
+                  </div>
+                  <button class="kth-icon-button close" title="Close" aria-label="Close">
+                    <span class="kth-visually-hidden">close</span>
+                  </button>
+                </div>
+                <div class="kth-menu-panel__content"></div>
+              </div>
+            </dialog>
+          </li>
+          <li><button data-id="1.863192" class="kth-menu-item dropdown">
+              <span>
+                About KTH
+              </span>
+            </button>
+            <dialog class="kth-menu-panel">
+              <div class="kth-menu-panel__container">
+                <div class="kth-menu-panel__header">
+                  <div>
+                    <a href="/en/om">
+                      <h2>
+                        About KTH
+                      </h2>
+                    </a>
+                  </div>
+                  <button class="kth-icon-button close" title="Close" aria-label="Close">
+                    <span class="kth-visually-hidden">close</span>
+                  </button>
+                </div>
+                <div class="kth-menu-panel__content"></div>
+              </div>
+            </dialog>
+          </li>
+          <li><button data-id="1.853617" class="kth-menu-item dropdown">
+              <span>
+                Library
+              </span>
+            </button>
+            <dialog class="kth-menu-panel">
+              <div class="kth-menu-panel__container">
+                <div class="kth-menu-panel__header">
+                  <div>
+                    <a href="/en/biblioteket">
+                      <h2>
+                        Library
+                      </h2>
+                    </a>
+                  </div>
+                  <button class="kth-icon-button close" title="Close" aria-label="Close">
+                    <span class="kth-visually-hidden">close</span>
+                  </button>
+                </div>
+                <div class="kth-menu-panel__content"></div>
+              </div>
+            </dialog>
+          </li>
+        
+      </ul>
+    </nav>
+  
+    <!-- Mobile menu -->
+    <nav class="kth-mega-menu--collapsable">
+      <dialog class="kth-mobile-menu">
+        <div class="kth-mobile-menu__navigation">
+          <button class="kth-icon-button close" title="Close" aria-label="Close">
+            <span class="kth-visually-hidden">Close</span>
+          </button>
+        </div>
+        <div class="kth-mobile-menu__content">
+          <ul class="kth-mobile-menu__items">
+            <li>
+              <button class="kth-mobile-menu__item" data-id="1.202249">
+                <span>
+                  Studies
+                </span>
+              </button>
+              <dialog class="kth-menu-panel--modal">
+                <button class="kth-icon-button close" title="Close" aria-label="Close">
+                  <span class="kth-visually-hidden">Close</span>
+                </button>
+                <div class="kth-menu-panel__content"></div>
+              </dialog>
+            </li>
+            <li>
+              <button class="kth-mobile-menu__item" data-id="1.202250">
+                <span>
+                  Research
+                </span>
+              </button>
+              <dialog class="kth-menu-panel--modal">
+                <button class="kth-icon-button close" title="Close" aria-label="Close">
+                  <span class="kth-visually-hidden">Close</span>
+                </button>
+                <div class="kth-menu-panel__content"></div>
+              </dialog>
+            </li>
+            <li>
+              <button class="kth-mobile-menu__item" data-id="1.202255">
+                <span>
+                  Collaboration
+                </span>
+              </button>
+              <dialog class="kth-menu-panel--modal">
+                <button class="kth-icon-button close" title="Close" aria-label="Close">
+                  <span class="kth-visually-hidden">Close</span>
+                </button>
+                <div class="kth-menu-panel__content"></div>
+              </dialog>
+            </li>
+            <li>
+              <button class="kth-mobile-menu__item" data-id="1.863192">
+                <span>
+                  About KTH
+                </span>
+              </button>
+              <dialog class="kth-menu-panel--modal">
+                <button class="kth-icon-button close" title="Close" aria-label="Close">
+                  <span class="kth-visually-hidden">Close</span>
+                </button>
+                <div class="kth-menu-panel__content"></div>
+              </dialog>
+            </li>
+            <li>
+              <button class="kth-mobile-menu__item" data-id="1.853617">
+                <span>
+                  Library
+                </span>
+              </button>
+              <dialog class="kth-menu-panel--modal">
+                <button class="kth-icon-button close" title="Close" aria-label="Close">
+                  <span class="kth-visually-hidden">Close</span>
+                </button>
+                <div class="kth-menu-panel__content"></div>
+              </dialog>
+            </li>
+          </ul>
+        </div>
+      </dialog>
+      <dialog class="kth-mobile-menu details" data-id="1.202249">
+        <div class="kth-mobile-menu__navigation">
+          <button class="kth-button back">Main menu</button>
+          <button class="kth-icon-button close" title="Close" aria-label="Close">
+            <span class="kth-visually-hidden">Close</span>
+          </button>
+        </div>
+        <div class="kth-mobile-menu__header">
+          <a href="/en/studies">
+            <h2>
+              Studies
+            </h2>
+          </a>
+        </div>
+        <div class="kth-mobile-menu__content">
+          <div class="kth-mobile-menu__cortina-content"></div>
+        </div>
+      </dialog><dialog class="kth-mobile-menu details" data-id="1.202250">
+        <div class="kth-mobile-menu__navigation">
+          <button class="kth-button back">Main menu</button>
+          <button class="kth-icon-button close" title="Close" aria-label="Close">
+            <span class="kth-visually-hidden">Close</span>
+          </button>
+        </div>
+        <div class="kth-mobile-menu__header">
+          <a href="/en/forskning">
+            <h2>
+              Research
+            </h2>
+          </a>
+        </div>
+        <div class="kth-mobile-menu__content">
+          <div class="kth-mobile-menu__cortina-content"></div>
+        </div>
+      </dialog><dialog class="kth-mobile-menu details" data-id="1.202255">
+        <div class="kth-mobile-menu__navigation">
+          <button class="kth-button back">Main menu</button>
+          <button class="kth-icon-button close" title="Close" aria-label="Close">
+            <span class="kth-visually-hidden">Close</span>
+          </button>
+        </div>
+        <div class="kth-mobile-menu__header">
+          <a href="/en/samverkan">
+            <h2>
+              Collaboration
+            </h2>
+          </a>
+        </div>
+        <div class="kth-mobile-menu__content">
+          <div class="kth-mobile-menu__cortina-content"></div>
+        </div>
+      </dialog><dialog class="kth-mobile-menu details" data-id="1.863192">
+        <div class="kth-mobile-menu__navigation">
+          <button class="kth-button back">Main menu</button>
+          <button class="kth-icon-button close" title="Close" aria-label="Close">
+            <span class="kth-visually-hidden">Close</span>
+          </button>
+        </div>
+        <div class="kth-mobile-menu__header">
+          <a href="/en/om">
+            <h2>
+              About KTH
+            </h2>
+          </a>
+        </div>
+        <div class="kth-mobile-menu__content">
+          <div class="kth-mobile-menu__cortina-content"></div>
+        </div>
+      </dialog><dialog class="kth-mobile-menu details" data-id="1.853617">
+        <div class="kth-mobile-menu__navigation">
+          <button class="kth-button back">Main menu</button>
+          <button class="kth-icon-button close" title="Close" aria-label="Close">
+            <span class="kth-visually-hidden">Close</span>
+          </button>
+        </div>
+        <div class="kth-mobile-menu__header">
+          <a href="/en/biblioteket">
+            <h2>
+              Library
+            </h2>
+          </a>
+        </div>
+        <div class="kth-mobile-menu__content">
+          <div class="kth-mobile-menu__cortina-content"></div>
+        </div>
+      </dialog>
+    </nav>
+    <!-- Mobile menu -->
+  
+    
+    <script>/* eslint-disable no-unused-expressions, no-unused-vars, no-undef */"use strict";window.addEventListener("load",()=>{function e(e){return document.querySelector(".kth-mega-menu[data-ajax-path]")?.getAttribute("data-ajax-path")+e}function t(){document.querySelectorAll("dialog").forEach(e=>e.close())}function n(e){const n=e.querySelector(".kth-icon-button.close");e.addEventListener("keydown",t=>{"Escape"===t.key&&e.close()}),n instanceof HTMLButtonElement&&n.addEventListener("click",()=>{t()})}function o(e,o){n(e),o.addEventListener("click",n=>{n.preventDefault(),e.open?t():(t(),e.show())}),document.addEventListener("click",n=>{!e.open||n.composedPath().includes(o)||n.composedPath().includes(e)||(n.preventDefault(),t())})}function c(e,o,c){const i=e.querySelector(".kth-button.back");n(e),o.addEventListener("click",n=>{n.preventDefault(),t(),e.showModal()}),i instanceof HTMLButtonElement&&i.addEventListener("click",()=>{e.close(),c&&c.showModal()})}var i,l;document.querySelectorAll(".kth-menu-item[data-id], .kth-menu-item--modal[data-id]").forEach(t=>{const n=t.nextElementSibling,o=n?.querySelector(".kth-menu-panel__content");if(!(t instanceof HTMLElement))return;if(!(n instanceof HTMLDialogElement))return;const c=t.dataset.id;let i;function l(){o instanceof HTMLElement&&(i||(i=fetch(e(c)).then(e=>e.text())),i.then(e=>{o.innerHTML=e}))}t.addEventListener("mouseover",l),t.addEventListener("click",l)}),document.querySelectorAll(".kth-mobile-menu__item[data-id]").forEach(t=>{if(!(t instanceof HTMLElement))return;const n=t.dataset.id,o=document.querySelector(`.kth-mobile-menu[data-id='${n}']`),c=o?.querySelector(".kth-mobile-menu__cortina-content");if(!(o instanceof HTMLDialogElement))return;let i;t.addEventListener("click",function(){c instanceof HTMLElement&&(i||(i=fetch(e(n)).then(e=>e.text())),i.then(e=>{c.innerHTML=e}))})}),function(e,n){if(e){for(const e of n){if(!(e instanceof HTMLElement))continue;const t=e.nextElementSibling;t instanceof HTMLDialogElement&&o(t,e)}e.addEventListener("focusout",function(n){const o=n.relatedTarget;o&&o instanceof Node&&!e.contains(o)&&t()})}}(document.querySelector(".kth-header"),document.querySelectorAll(".kth-mega-menu .kth-menu-item")),i=document.querySelector(".kth-menu-item.collapsable"),l=document.querySelector(".kth-mobile-menu"),i instanceof HTMLElement&&l instanceof HTMLDialogElement&&c(l,i),function(e,t){if(!t||t instanceof HTMLDialogElement)for(const n of e){if(!(n instanceof HTMLElement))continue;const e=n.getAttribute("data-id"),o=document.querySelector(`.kth-mobile-menu[data-id='${e}']`);if(!(o instanceof HTMLDialogElement))return;c(o,n,t)}}(document.querySelectorAll(".kth-mobile-menu__item"),document.querySelector(".kth-mobile-menu"))}),window.addEventListener("load",()=>{const e={threshold:32,className:"collapsed"};function t(e,{threshold:t,className:n}){window.scrollY>t?e?.classList.add(n):e?.classList.remove(n)}!function(n,o=e){t(n,o),window.addEventListener("scroll",()=>{t(n,o)})}(document.querySelector(".kth-header"))});</script>
+  
+  
+  
+      <ul class="kth-header__tools">
+        <li>
+          <button class="kth-menu-item search">
+            <span>Search</span>
+          </button>
+          <dialog class="kth-menu-panel">
+            <div class="kth-menu-panel__container search">
+              <button class="kth-icon-button close">
+                <span class="kth-visually-hidden">Close</span>
+              </button>
+              <div class="kth-menu-panel__content search">
+                
+  
+  
+  
+  
+    <div class="block search mainWidget default-size" data-cid="1.77262" lang="en">
+      <div id="widget_lwiqocxb" class="searchWidgetContainer"><div class="searchWidget"><div class="searchInputBar"><form class="searchInputForm" method="GET" role="search" action="https://www.kth.se/search"><div class="searchAutoCompleteField kth-search"><label class="inputbar-label" for="widget_lwiqocxb_search__Field">Search the KTH website</label><input id="widget_lwiqocxb_search__Field" name="q" autoComplete="off" type="text" maxLength="1024" value=""/><button type="submit"><span class="kth-visually-hidden">Search</span></button></div><input type="hidden" name="urlFilter" value=""/><input type="hidden" name="entityFilter" value=""/><input type="hidden" name="metaSystemFilter" value=""/><input type="hidden" name="documentFilter" value=""/><input type="hidden" name="filterLabel" value=""/><input type="hidden" name="l" value="en"/><input type="hidden" name="noscript" class="noscriptInput" value=""/></form></div><div class="searchAlternativesWidget"><div class="searchAlternativesWidgetLinks"><a href="https://www.kth.se/en/student/search">Search the Student web</a><a href="https://intra.kth.se/search?l=en">Search the Intranet</a></div></div></div></div>
+  
+  <script>
+    (() => {
+      const SCRIPT_PATH = 'https://www.kth.se/search/static/widget.js?v=2.0.0-20260219.2_551dd360'
+      const STYLE_PATH = 'https://www.kth.se/search/static/widget.css?v=2.0.0-20260219.2_551dd360'
+      const DATA_PATH = 'https://www.kth.se/search/widgetData.js?widgetId=widget_lwiqocxb&placeholder=Search%20the%20KTH%20website&isFilterRemovable=true&l=en&includeLinks=true'
+      const WIDGET_ID = 'widget_lwiqocxb'
+      const scriptAnchor = document.currentScript
+  
+      new IntersectionObserver((entries, observer) => {
+  
+        if (entries[0].target?.checkVisibility?.()) {
+  
+          if (!window.searchWidgetIsLoaded) {
+  
+            const styleElement = document.createElement('link')
+            styleElement.href = STYLE_PATH
+            styleElement.media = "screen"
+            styleElement.rel = "stylesheet"
+            styleElement.async = 1
+            scriptAnchor.after(styleElement)
+  
+            const scriptElement = document.createElement('script')
+            scriptElement.src = SCRIPT_PATH
+            scriptElement.async = 1
+            scriptAnchor.after(scriptElement)
+          }
+  
+          const dataElement = document.createElement('script')
+          dataElement.src = DATA_PATH
+          dataElement.async = 1
+          scriptAnchor.after(dataElement)
+  
+          window.searchWidgetIsLoaded = true
+          observer.disconnect()
+        }
+      }).observe(document.getElementById(WIDGET_ID))
+    })()
+  </script>
+      
+      <script>/* eslint-disable no-unused-expressions, no-unused-vars, no-undef */"use strict";!function(){function e(){document.querySelectorAll("dialog").forEach(e=>e.close())}window.addEventListener("load",function(){document.querySelectorAll(".block.search").forEach(t=>{t.parentElement.className.includes("kth-menu-panel__content")&&function(t,n){if(!(n instanceof HTMLElement))return;const c=n.nextElementSibling;if(!(c instanceof HTMLDialogElement))return;c.addEventListener("keydown",t=>{"Escape"===t.key&&e()});const o=c.querySelector(".close");o instanceof HTMLButtonElement&&o.addEventListener("click",()=>{e()}),n.addEventListener("click",n=>{n.preventDefault(),c.open?e():(e(),c.show(),function(e){const t=e.querySelector("template");if(null===t)return;const n=t.content;t.replaceWith(n)}(t),function(e){const t=e.querySelector(".searchAutoCompleteField")?.querySelector("input");t&&t.focus()}(c))}),document.addEventListener("click",t=>{!c.open||t.composedPath().includes(n)||t.composedPath().includes(c)||(t.preventDefault(),e())})}(t,document.querySelector(".kth-menu-item.search"))})})}();</script>
+    </div>
+  
+  
+  
+              </div>
+            </div>
+          </dialog>
+        </li>
+        <li>
+          <a class="kth-menu-item language" hreflang="sv-SE" href="?l=sv">Svenska</a>
+        </li>
+      </ul>
+      <button class="kth-menu-item menu collapsable">
+        <span>Menu</span>
+      </button>
+    </div>
+  </header>
+  
+  
+    <nav id="breadcrumbs" aria-label="Breadcrumbs" class="kth-breadcrumbs">
+      <ol class="kth-breadcrumbs__list">
+        <li><a href="https://www.kth.se?l=en">KTH</a></li><li><a href="/profile?l=en">Profiles</a></li><li><a href="/profile/seraina?l=en">Seraina Dual</a></li>
+      </ol>
+    </nav>
+  
+  
+  <!--indexOn: all-->  <div class="kth-main-content">
+    <script>window.__compressedData__DATA = "%7B%22language%22%3A%22en%22%2C%22browserConfig%22%3A%7B%22proxyPrefixPath%22%3A%7B%22uri%22%3A%22%2Fprofile%22%7D%2C%22files%22%3A%7B%22avatar%22%3A%22https%3A%2F%2Fwww.kth.se%2Ffiles%2Favatar%2F%3Ausername%22%7D%2C%22hostUrl%22%3A%22https%3A%2F%2Fwww.kth.se%22%2C%22env%22%3A%22prod%22%7D%2C%22profile%22%3A%7B%22username%22%3A%22seraina%22%2C%22pages%22%3A%5B%7B%22title%22%3A%22Interactive%20wearable%20technologies%22%2C%22slug%22%3A%22interactive-wearable-technologies%22%2C%22url%22%3A%22%2Fprofile%2Fseraina%2Fpage%2Finteractive-wearable-technologies%22%7D%2C%7B%22title%22%3A%22Cardiac%20support%20technologies%22%2C%22slug%22%3A%22cardiac-assistive-technologies%22%2C%22url%22%3A%22%2Fprofile%2Fseraina%2Fpage%2Fcardiac-assistive-technologies%22%2C%22content%22%3A%22%3Cdiv%3E%5Cn%3Cdiv%3E%5Cn%3Ch2%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fplay.kth.se%2Fmedia%2FExtra-Aortic%2BCounterpulsation%2BAortic%2BPhantom%2B-%2BMade%2Bwith%2BClipchamp%2F0_9mjuij62%5C%22%3EAortic%20Assist%3C%2Fa%3E%3C%2Fh2%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3EThe%20AorticAssist%20project%20investigates%20cardiovascular%20autoregulatory%20mechanisms%2C%20soft%20robotic%20actuator%20design%2C%20and%20the%20clinical%20use%20of%20aortic%20counterpulsation.%20This%20research%20aims%20to%20improve%20the%20candidacy%20of%20counterpulsation%20as%20a%20long-term%2C%20out-of-hospital%20treatment%20option%20for%20heart%20failure%20patients%20and%20increase%20the%20efficacy%20of%20counterpulsation%20as%20a%20method%20of%20cardiac%20recovery.%20AorticAssist%20relies%20on%20benchtop%20methods%20such%20as%20mock%20flow%20loops%2C%20sensorised%20physiological%20phantoms%2C%20and%204D%20Flow%20MRI%2C%20as%20well%20as%20in-vivo%20and%20clinical%20studies%20to%20improve%20our%20understanding%20of%20the%20interaction%20between%20circulatory%20support%20and%20cardiovascular%20autoregulatory%20responses.%20These%20results%20are%20then%20used%20for%20data-driven%20design%20of%20novel%20soft-robotic%20counterpulsation%20actuators.%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Cstrong%3EContact%20person%3A%3C%2Fstrong%3E%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.kth.se%2Fprofile%2Fmudge%5C%22%3EKyle%20Mudge%3C%2Fa%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Cstrong%3EFunded%20by%3A%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Cimg%20alt%3D%5C%22VR%20logo%5C%22%20class%3D%5C%22kth-content-img%5C%22%20src%3D%5C%22https%3A%2F%2Fwww.kth.se%2Ffiles%2Fview%2Fseraina%2F654dff2380b113b3d6c39732%2Fsvart_liggande_eng.png%5C%22%20%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Cstrong%3EPublications%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%3EK.R.%20Mudge%2C%20E.%20Perra%2C%20A.%20Kight%2C%20S.A.%20Dual.%20%3Cem%3EBiomimetic%20aortic%20phantoms%20with%20artificial%20baroreceptor%20sensors%3C%2Fem%3E.%20IEEE%20RoboSoft%202025.%20Extended%20abstract%20accepted%20for%20presentation.%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3EK.R.%20Mudge%2C%20E.%20Perra%2C%20S.A.%20Dual.%20%3Cem%3EParameterised%20aortic%20arch%20dimensions%20for%20flow%20studies%3C%2Fem%3E.%20European%20Society%20of%20Biomechanics%2C%202024.%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%26nbsp%3B%3C%2Fp%3E%5Cn%5Cn%3Ch2%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3EElectrically-drive%20soft%20robotic%20blood%20flow%20support%20to%20the%20lungs%3C%2Fh2%3E%5Cn%5Cn%3Cp%3EPost-operative%20failure%20of%20the%20right%20side%20of%20the%20heart%20is%20a%20major%20complication%20in%20cardiac%20surgery.%20Inspired%20by%20my%20PostDoc%20project%20on%20extra-vascular%20compression%20device%2C%20we%20developed%20a%20similar%20counter-pulsation%20device%20for%20augmenting%20blood%20flow%20to%20the%20lungs.%20A%20critical%20extension%20was%20the%20electro-pneumatic%20actuation%20approach%20which%20holds%20the%20potential%20for%20transcutaneous%20power%20transmission%2C%20reducing%20current%20electric%20driveline%20complications.%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Cstrong%3EIn%20collaboration%3C%2Fstrong%3E%20with%20Prof.%20Mark%20Cutkosky%2C%20Stanford%20University%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%3Cstrong%3EPublications%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%3EI.%20Pirozzi%2C%20A.%20Kight%2C%20A.%20Kyungwon%20Han%2C%20R.%20Cutkosky%2C%20S.A.%20Dual.%20%3Cem%3ECirculatory%20Support%3A%20Artificial%20Muscles%20for%20the%20Future%20of%20Cardiovascular%20Assist%20Devices.%20%3C%2Fem%3EAdvanced%20Materials%2C%20adma.202210713%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3EI.%20Pirozzi1%2C%20A.%20Kight%2C%20X.%20Liang%2C%20A.%20Kyungwon%20Han%2C%20D.B.%20Ennis%2C%20W.%20Hiesinger%2C%20S.A.%20Dual%2C%20and%20M.%20Cutkosky.%20%3Cem%3EElectrohydraulic%20Vascular%20Compression%20device%20(e-VaC)%20with%20integrated%20sensing%20and%20controls%3A%20towards%20adaptive%20hemodynamic%20support%20of%20the%20pulmonary%20circulation%3C%2Fem%3E.%20Advanced%20Materials%20Technologies.%202201196%2C%202022.%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%26nbsp%3B%3C%2Fp%3E%5Cn%5Cn%3Ch2%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3ESoft%20robotic%20cardiac%20assist%20device%20for%20the%20forgotten%20halt%20of%20heart%20failure%20patients%3C%2Fh2%3E%5Cn%5Cn%3Cp%3ENo%20effective%20treatment%20for%20heart%20failure%20with%20preserved%20ejection%20fraction%20(HFpEF)%20is%20available%20at%20present.%20HFpEF%20is%20characterized%20by%20a%20pathological%20reduction%20in%20heart%20compliance%2C%20which%20impairs%20the%20ability%20of%20the%20heart%20to%20fill%20properly%20and%20results%20in%20low%20cardiac%20efficacy.%20I%20developed%20a%20soft%20robotic%20cardiac%20assist%20device%2C%20which%20wraps%20around%20the%20aorta%20and%20reduces%20the%20pressures%20seen%20by%20the%20heart%20in%20a%20counter-pulsation%20way.%20Soft%20robotic%20actuators%20allow%20the%20device%20to%20smoothly%20conform%20to%20the%20native%20vasculature%20and%20will%20enable%20the%20miniaturization%20of%20the%20device%20for%20minimally%20invasive%20implantation.%20In%20the%20first%20step%2C%20the%20device%20is%20tested%20in%20vitro%20to%20prove%20pressure%20reduction%20and%20effects%20on%20flow%20fields%20using%20imaging.%20In%20the%20second%20step%2C%20an%20in-vivo%20study%20in%20pigs%20determines%20if%20the%20cardiac%20output%20of%20a%20living%20heart%20could%20be%20increased%20through%20the%20soft%20robotic%20cardiac%20assist%20device.%3C%2Fp%3E%5Cn%5Cn%3Cp%3E%3Cstrong%3EContact%3A%3C%2Fstrong%3E%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.kth.se%2Fprofile%2Fseraina%5C%22%3ESeraina%20Dual%26nbsp%3B%3C%2Fa%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%3E%3Cstrong%3EFunded%20by%3C%2Fstrong%3E%20the%20Swiss%20National%20Science%3C%2Fp%3E%5Cn%5Cn%3Cp%3E%3Cstrong%3EIn%20collaboration%3C%2Fstrong%3E%20with%20Daniel%20Ennis%20and%20Alison%20Marsden%20both%20Stanford%20University.%3C%2Fp%3E%5Cn%5Cn%3Cp%3E%3Cstrong%3EPublications%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%5Cn%3Cp%3ES.%20A.%20Dual%2C%20R.%20Shad%2C%20M.%20Arduini%2C%20A.%20Kight%2C%20I.%20Pirozzi%2C%20R.%20Fong%2C%20I.%20Chen%2C%20W.%20Hiesinger%2C%20D.%20Ennis%20%3Cem%3EAn%20extra-aortic%20soft%20robotic%20cardiac%20support%20device%3A%20Patient-specific%20in-vitro%20and%20in-vivo%20evaluation%2C%20%3C%2Fem%3EEuropean%20society%20of%20artificial%20organs%2C%202023.%3C%2Fp%3E%5Cn%5Cn%3Cp%3ES.A.%20Dual%2C%20M.%20Arduini%2C%20B.%20Schmittlein%2C%20J.%20Zimmermann%2C%20E.%20Roche%2C%20D.B.%20Ennis.%20%3Cem%3EEvaluation%20of%20operation%20pressure%20of%20a%20soft%20robotic%20extra-aortic%20cardiac%20assist%20device%20using%20MRI.%3C%2Fem%3E%20International%20Society%20of%20Magnetic%20Resonance%20Imaging%202022.%20(Rapid-Fire)%3C%2Fp%3E%5Cn%5Cn%3Cp%3EM.%20Arduini%2C%20J.%20Pham%2C%20A.%20Marsden%2C%20I.Y.%20Chen%2C%20D.B.%20Ennis%20S.A.%20Dual%20%3Cem%3EFramework%20for%20Patient-specific%20hemodynamics%20in%20Heart%20Failure%20with%20Counterpulsation%20Support.%2C%3C%2Fem%3E%20Frontiers%20in%20Cardiovascular%20Medicine%2C%20Aug%201%3A9%3A89529%2C%202022%3C%2Fp%3E%5Cn%5Cn%3Cp%3E%26nbsp%3B%3C%2Fp%3E%5Cn%5Cn%3Cp%20style%3D%5C%22margin-left%3A0px%3B%20margin-right%3A0px%5C%22%3E%26nbsp%3B%3C%2Fp%3E%5Cn%3C%2Fdiv%3E%5Cn%3C%2Fdiv%3E%22%7D%2C%7B%22title%22%3A%22Test-rigs%20fo%20patient-specific%20insight%22%2C%22slug%22%3A%22patient-specific-modeling%22%2C%22url%22%3A%22%2Fprofile%2Fseraina%2Fpage%2Fpatient-specific-modeling%22%7D%2C%7B%22title%22%3A%22Physiologically-guided%20signal%20processing%22%2C%22slug%22%3A%22physiologically-guided-imaging-analysis%22%2C%22url%22%3A%22%2Fprofile%2Fseraina%2Fpage%2Fphysiologically-guided-imaging-analysis%22%7D%2C%7B%22title%22%3A%22Implantable%20%20and%20wearable%20sensors%20for%20health%20monitoring%22%2C%22slug%22%3A%22implantable-sensors-for-continuous-monitoring%22%2C%22url%22%3A%22%2Fprofile%2Fseraina%2Fpage%2Fimplantable-sensors-for-continuous-monitoring%22%7D%5D%2C%22firstName%22%3A%22Seraina%22%2C%22lastName%22%3A%22Dual%22%2C%22emailAddress%22%3A%22seraina%40kth.se%22%2C%22title%22%3A%22Assistant%20professor%22%2C%22telephoneNumber%22%3A%22%2B46%208%20790%2097%2069%22%7D%7D";</script>
+
+<!---->
+
+  <div id="app"><main id="mainContent"><div class="profileHeader"><div class="profileButtons"></div></div><div class="portfolioPage"><div><h1>Cardiac support technologies</h1><div id="htmlContent" class="html-content"><div>
+<div>
+<h2 style="margin-left:0px; margin-right:0px"><a href="https://play.kth.se/media/Extra-Aortic+Counterpulsation+Aortic+Phantom+-+Made+with+Clipchamp/0_9mjuij62">Aortic Assist</a></h2>
+
+<p style="margin-left:0px; margin-right:0px">The AorticAssist project investigates cardiovascular autoregulatory mechanisms, soft robotic actuator design, and the clinical use of aortic counterpulsation. This research aims to improve the candidacy of counterpulsation as a long-term, out-of-hospital treatment option for heart failure patients and increase the efficacy of counterpulsation as a method of cardiac recovery. AorticAssist relies on benchtop methods such as mock flow loops, sensorised physiological phantoms, and 4D Flow MRI, as well as in-vivo and clinical studies to improve our understanding of the interaction between circulatory support and cardiovascular autoregulatory responses. These results are then used for data-driven design of novel soft-robotic counterpulsation actuators.&nbsp;&nbsp;</p>
+
+<p style="margin-left:0px; margin-right:0px"><strong>Contact person:</strong> <a href="https://www.kth.se/profile/mudge">Kyle Mudge</a></p>
+
+<p style="margin-left:0px; margin-right:0px"><strong>Funded by:</strong></p>
+
+<p style="margin-left:0px; margin-right:0px"><img alt="VR logo" class="kth-content-img" src="https://www.kth.se/files/view/seraina/654dff2380b113b3d6c39732/svart_liggande_eng.png" ></p>
+
+<p style="margin-left:0px; margin-right:0px"><strong>Publications</strong></p>
+
+<p>K.R. Mudge, E. Perra, A. Kight, S.A. Dual. <em>Biomimetic aortic phantoms with artificial baroreceptor sensors</em>. IEEE RoboSoft 2025. Extended abstract accepted for presentation.</p>
+
+<p style="margin-left:0px; margin-right:0px">K.R. Mudge, E. Perra, S.A. Dual. <em>Parameterised aortic arch dimensions for flow studies</em>. European Society of Biomechanics, 2024.</p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+
+<h2 style="margin-left:0px; margin-right:0px">Electrically-drive soft robotic blood flow support to the lungs</h2>
+
+<p>Post-operative failure of the right side of the heart is a major complication in cardiac surgery. Inspired by my PostDoc project on extra-vascular compression device, we developed a similar counter-pulsation device for augmenting blood flow to the lungs. A critical extension was the electro-pneumatic actuation approach which holds the potential for transcutaneous power transmission, reducing current electric driveline complications.</p>
+
+<p style="margin-left:0px; margin-right:0px"><strong>In collaboration</strong> with Prof. Mark Cutkosky, Stanford University</p>
+
+<p style="margin-left:0px; margin-right:0px"><strong>Publications</strong></p>
+
+<p>I. Pirozzi, A. Kight, A. Kyungwon Han, R. Cutkosky, S.A. Dual. <em>Circulatory Support: Artificial Muscles for the Future of Cardiovascular Assist Devices. </em>Advanced Materials, adma.202210713</p>
+
+<p style="margin-left:0px; margin-right:0px">I. Pirozzi1, A. Kight, X. Liang, A. Kyungwon Han, D.B. Ennis, W. Hiesinger, S.A. Dual, and M. Cutkosky. <em>Electrohydraulic Vascular Compression device (e-VaC) with integrated sensing and controls: towards adaptive hemodynamic support of the pulmonary circulation</em>. Advanced Materials Technologies. 2201196, 2022.</p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+
+<h2 style="margin-left:0px; margin-right:0px">Soft robotic cardiac assist device for the forgotten halt of heart failure patients</h2>
+
+<p>No effective treatment for heart failure with preserved ejection fraction (HFpEF) is available at present. HFpEF is characterized by a pathological reduction in heart compliance, which impairs the ability of the heart to fill properly and results in low cardiac efficacy. I developed a soft robotic cardiac assist device, which wraps around the aorta and reduces the pressures seen by the heart in a counter-pulsation way. Soft robotic actuators allow the device to smoothly conform to the native vasculature and will enable the miniaturization of the device for minimally invasive implantation. In the first step, the device is tested in vitro to prove pressure reduction and effects on flow fields using imaging. In the second step, an in-vivo study in pigs determines if the cardiac output of a living heart could be increased through the soft robotic cardiac assist device.</p>
+
+<p><strong>Contact:</strong> <a href="https://www.kth.se/profile/seraina">Seraina Dual&nbsp;</a></p>
+
+<p><strong>Funded by</strong> the Swiss National Science</p>
+
+<p><strong>In collaboration</strong> with Daniel Ennis and Alison Marsden both Stanford University.</p>
+
+<p><strong>Publications</strong></p>
+
+<p>S. A. Dual, R. Shad, M. Arduini, A. Kight, I. Pirozzi, R. Fong, I. Chen, W. Hiesinger, D. Ennis <em>An extra-aortic soft robotic cardiac support device: Patient-specific in-vitro and in-vivo evaluation, </em>European society of artificial organs, 2023.</p>
+
+<p>S.A. Dual, M. Arduini, B. Schmittlein, J. Zimmermann, E. Roche, D.B. Ennis. <em>Evaluation of operation pressure of a soft robotic extra-aortic cardiac assist device using MRI.</em> International Society of Magnetic Resonance Imaging 2022. (Rapid-Fire)</p>
+
+<p>M. Arduini, J. Pham, A. Marsden, I.Y. Chen, D.B. Ennis S.A. Dual <em>Framework for Patient-specific hemodynamics in Heart Failure with Counterpulsation Support.,</em> Frontiers in Cardiovascular Medicine, Aug 1:9:89529, 2022</p>
+
+<p>&nbsp;</p>
+
+<p style="margin-left:0px; margin-right:0px">&nbsp;</p>
+</div>
+</div></div></div><div class="profile-right"><hr class="d-block d-lg-none"/><div class="sidebarByline"><div class="avatarContainer col-4"><img data-testid="avatar" class=" img-fluid" src="https://www.kth.se/files/avatar/seraina" alt="Profile picture of Seraina Dual" width="200" height="200" loading="lazy"/></div><div class="sidebarBylineInfo col-8"><ul class="list-unstyled"><li><b>Seraina Dual,</b><div>Assistant professor</div></li><li><a href="mailto:seraina@kth.se">seraina@kth.se</a></li><li><a href="tel:+46 8 790 97 69">+46 8 790 97 69</a></li></ul></div></div><div id="editPages" class="sidebarPortfolio"><h2 class="edit-header">Portfolio</h2><ul class="list-unstyled portfolioList"><li><a href="/profile/seraina/page/interactive-wearable-technologies">Interactive wearable technologies</a></li><li>Cardiac support technologies</li><li><a href="/profile/seraina/page/patient-specific-modeling">Test-rigs fo patient-specific insight</a></li><li><a href="/profile/seraina/page/physiologically-guided-imaging-analysis">Physiologically-guided signal processing</a></li><li><a href="/profile/seraina/page/implantable-sensors-for-continuous-monitoring">Implantable  and wearable sensors for health monitoring</a></li></ul></div></div></div></main></div>
+  </div>
+  <!-- add "scroll-to-top" button when scrolled down -->
+  <!--indexOff: all-->
+  <div id="back-to-top" role="link" aria-label="To page top"></div>
+  <footer class="kth-footer external"><div class="kth-footer__content">
+  
+  
+  
+  
+    <div class="columnSplitterWrapper" data-cid="1.202278" lang="en">
+      
+      <div class="columnSplitter  using4Columns ">
+        <div class="col c1">
+          
+  
+  
+  
+  
+    <div class="block list links defaultTheme" data-cid="1.202279" lang="en">
+      <h2>KTH</h2>
+      
+      <ul>
+        <li><a href="/en/studies">Study at KTH</a></li>
+        <li><a href="/en/forskning">Research</a></li>
+        <li><a href="/en/samverkan">Cooperation</a></li>
+        <li><a href="/en/om">About KTH</a></li>
+        <li><a href="https://www.kth.se/en/student">Student at KTH</a></li>
+        <li><a href="/en/alumni">Alumni</a></li>
+        <li><a href="https://intra.kth.se/en">KTH Intranet</a></li>
+      </ul>
+    </div>
+  
+  
+  
+        </div>
+        <div class="col c2">
+          
+  
+  
+  
+  
+    <div class="block list links defaultTheme" data-cid="1.202289" lang="en">
+      <h2>Organisation</h2>
+      
+      <ul>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/biblioteket">KTH Library</a></li>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/om/organisation/kth-s-skolor-1.1071092">KTH Schools</a></li>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/forskning/sarskilda-forskningssatsningar/kompetenscentra">Competence centres</a></li>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/om/organisation/rektor-och-ledning">President and management</a></li>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/om/organisation/vs-1.887371">University Administration</a></li>
+      </ul>
+    </div>
+  
+  
+  
+        </div>
+        <div class="col c3">
+          
+  
+  
+  
+  
+    <div class="block list links defaultTheme" data-cid="1.202317" lang="en">
+      <h2>Services</h2>
+      
+      <ul>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/student/studier/schema">Timetables</a></li>
+        <li><a href="https://www.kth.se/student/kurser/kurser-inom-program?l=en"> Course and programme directory</a></li>
+        <li><a href="https://webmail.kth.se">Webmail</a></li>
+        <li><a href="https://canvas.kth.se">Learning management system (Canvas)</a></li>
+      </ul>
+    </div>
+  
+  
+  
+        </div>
+        <div class="col c4">
+          
+  
+  
+  
+  
+    <article class="block teaser top white" data-cid="1.865130" lang="en">
+      
+      <div class="teaserBody   ">
+        
+        <h2 class="teaserHeading">
+          Contact
+        </h2>
+        <div class="lead">
+          
+          
+        
+          
+          <p><strong>KTH Royal Institute of Technology</strong><br> <em>SE-100 44 Stockholm<br> Sweden<br> +46 8 790 60 00</em></p>
+        
+      
+        </div>
+        
+      </div>
+    </article>
+  
+  
+  
+          
+  
+  
+  
+  
+    <div class="block list links defaultTheme" data-cid="1.582032" lang="en">
+      
+      
+      <ul>
+        <li><a href="/en/om/kontakt">Contact KTH</a></li>
+        <li><a href="/en/om/jobba-pa-kth">Work at KTH</a></li>
+        <li><a hreflang="en-GB" href="https://www.kth.se/en/om/press">Press and media</a></li>
+        <li><a href="/en/gemensamt">About KTH website</a></li>
+      </ul>
+    </div>
+  
+  
+  
+        </div>
+      </div>
+    </div>
+  
+  
+  </div></footer>
+  <!--indexOn: all-->  <script src="/profile/static/app.js?v=3.0.0-20260214.1_5aa32464"></script>
+</body>
+
+</html>
