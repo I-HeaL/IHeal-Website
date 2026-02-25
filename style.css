@@ -4,9 +4,15 @@
 
 @layer base {
   body {
-    @apply text-gray-800 bg-gray-50;
+    @apply text-white bg-kth-dark;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-kth-dark;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-white;
   }
 }
