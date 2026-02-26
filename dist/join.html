@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | I-HeaL Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        kth: {
+                            cerulean: '#007BA7',
+                            dark: '#15171a',
+                            slate: '#1e293b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Figtree', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            font-size: 115%;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-heading {
+            font-family: 'Figtree', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-kth-dark text-white antialiased selection:bg-kth-cerulean selection:text-white">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
+        <a href="index.html"
+            class="text-xl font-light tracking-widest uppercase hover:text-kth-cerulean transition-all duration-300 font-heading">
+            KTH <span class="font-bold">I-HeaL</span>
+        </a>
+        <div class="hidden lg:flex space-x-8 text-xs font-light tracking-widest">
+            <a href="index.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Home</a>
+            <a href="people.html" class="hover:text-kth-cerulean transition duration-300 uppercase">People</a>
+            <a href="research.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Research</a>
+            <a href="index.html#news" class="hover:text-kth-cerulean transition duration-300 uppercase">News</a>
+            <a href="join.html" class="text-white border-b border-white uppercase">Join Us</a>
+        </div>
+        <div class="lg:hidden text-2xl cursor-pointer">&#9776;</div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-40 pb-20 px-6 md:px-12 text-center md:text-left container mx-auto">
+        <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4 font-heading">Join Our Team
+        </h1>
+        <div class="w-12 h-1 bg-kth-cerulean mx-auto md:mx-0 mb-8"></div>
+        <p class="text-lg md:text-xl font-light leading-relaxed text-white max-w-3xl mx-auto md:mx-0">
+            Please contact me if you are a highly motivated and independent student for projects in the described
+            research
+            areas.
+        </p>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="container mx-auto px-6 md:px-12 pb-32">
+        <div class="max-w-2xl bg-[#1b1f23] rounded p-8 md:p-12 border border-white/5">
+            <form action="mailto:seraina@kth.se" method="post" enctype="text/plain" class="space-y-8">
+                <!-- Name -->
+                <div class="space-y-2">
+                    <label for="name" class="block text-xs uppercase tracking-widest text-white">Full Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full bg-[#15171a] border border-gray-700 rounded px-4 py-3 text-white focus:outline-none focus:border-kth-cerulean focus:ring-1 focus:ring-kth-cerulean transition text-sm">
+                </div>
+
+                <!-- Email -->
+                <div class="space-y-2">
+                    <label for="email" class="block text-xs uppercase tracking-widest text-white">Email
+                        Address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full bg-[#15171a] border border-gray-700 rounded px-4 py-3 text-white focus:outline-none focus:border-kth-cerulean focus:ring-1 focus:ring-kth-cerulean transition text-sm">
+                </div>
+
+                <!-- Subject -->
+                <div class="space-y-2">
+                    <label for="subject" class="block text-xs uppercase tracking-widest text-white">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                        class="w-full bg-[#15171a] border border-gray-700 rounded px-4 py-3 text-white focus:outline-none focus:border-kth-cerulean focus:ring-1 focus:ring-kth-cerulean transition text-sm">
+                </div>
+
+                <!-- Message -->
+                <div class="space-y-2">
+                    <label for="message" class="block text-xs uppercase tracking-widest text-white">Message</label>
+                    <textarea id="message" name="message" rows="6" required
+                        class="w-full bg-[#15171a] border border-gray-700 rounded px-4 py-3 text-white focus:outline-none focus:border-kth-cerulean focus:ring-1 focus:ring-kth-cerulean transition text-sm resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button type="submit"
+                        class="w-full md:w-auto px-12 py-3 bg-kth-cerulean text-white uppercase text-xs tracking-widest hover:bg-white hover:text-kth-cerulean transition duration-300 font-bold">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-kth-dark py-16 border-t border-gray-900">
+        <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
+            <div class="mb-8 md:mb-0">
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4 font-heading">KTH I-HeaL</div>
+                <div class="text-white text-sm font-light leading-relaxed">
+                    KTH Royal Institute of Technology<br>
+                    Hälsovägen 11<br>
+                    141 52 Huddinge, Stockholm, Sweden
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row md:items-center gap-6 text-sm text-white font-light tracking-widest uppercase">
+                <a href="join.html" class="hover:text-white transition">Join Us</a>
+            </div>
+        </div>
+        <div
+            class="container mx-auto px-12 mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-700 font-mono">
+            &copy; 2026 INTELLIGENT HEART TECHNOLOGY LAB
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | I-HeaL Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        kth: {
+                            cerulean: '#007BA7',
+                            dark: '#15171a',
+                            slate: '#1e293b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Figtree', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            font-size: 115%;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-heading {
+            font-family: 'Figtree', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-kth-dark text-white antialiased selection:bg-kth-cerulean selection:text-white">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
+        <a href="index.html"
+            class="text-xl font-light tracking-widest uppercase hover:border-kth-cerulean border-b border-transparent transition-all duration-300 font-heading">
+            KTH <span class="font-bold">I-HeaL</span>
+        </a>
+        <div class="hidden lg:flex space-x-8 text-xs font-light tracking-widest">
+            <a href="index.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Home</a>
+            <a href="people.html" class="text-white uppercase border-b border-white">People</a>
+            <a href="research.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Research</a>
+            <a href="index.html#news" class="hover:text-kth-cerulean transition duration-300 uppercase">News</a>
+            <a href="join.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Join Us</a>
+        </div>
+        <div class="lg:hidden text-2xl cursor-pointer">&#9776;</div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-40 pb-20 px-6 md:px-12 text-center md:text-left container mx-auto">
+        <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4 font-heading">Meet the Team
+        </h1>
+        <div class="w-12 h-1 bg-kth-cerulean mx-auto md:mx-0"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 md:px-12 pb-24 space-y-32">
+
+        <!-- Principal Investigator -->
+        <section>
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                Principal
+                Investigator</h2>
+            <div class="flex flex-col md:flex-row gap-12 items-center md:items-start group">
+                <div
+                    class="w-64 h-64 rounded-full overflow-hidden border-2 border-kth-cerulean/20 group-hover:border-kth-cerulean transition duration-500 relative">
+                    <img src="assets/images/members/Seraina_Dual.png" alt="Seraina Dual"
+                        class="w-full h-full object-cover transition duration-700">
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h3 class="text-3xl text-white font-light tracking-wide mb-2 font-heading">Seraina Dual</h3>
+                    <p class="text-kth-cerulean text-sm tracking-widest uppercase mb-1">Assistant Professor, Docent</p>
+                    <p class="text-kth-cerulean text-xs tracking-wider uppercase mb-6">Dept. of Biomedical Engineering &
+                        Health Systems, KTH</p>
+                    <p class="text-white font-light max-w-2xl leading-relaxed">
+                        Dr. Seraina Dual is an Assistant Professor (tenure track) in Biomedical Signal Processing at the
+                        Department of Biomedical Engineering and Health Systems leading the Intelligent Heart Technology
+                        Lab (I-HeaL). The labs research ultimately aims to help predict, prevent, and treat
+                        cardiovascular diseases. Motivated by health needs and inspired by engineering and control
+                        theory, the groups drives to improve human health.
+
+                        Seraina Dual trained as a Mechanical Engineer at the Federal Institute of Technology in Zurich,
+                        Switzerland (ETH Zurich) obtaining a Bachelor’s and Master's degree in Biomedical Engineering,
+                        Robotics and Control, and earned her PhD in the Product Development Group focusing on sensor
+                        systems for cardiovascular applications in the Zurich Heart Project. In collaboration with the
+                        team, she conducted cutting edge research in implantable sensor technologies in collaboration
+                        with the Voroes Group at ETH Zurich, the German Heart Center in Berlin, Germany, and the St.
+                        Vincent’s Hospital Sydney, Australia.
+
+                        As a translational Fellow she then joined the Department of Cardiothoracic Surgery at Stanford
+                        University, followed by an appointment as a PostDoc fellowship by the Swiss National Foundation
+                        in the Department of Radiology. During that time, she developed a novel design of soft robotic
+                        cardiac support device using rapid iterations in cardiac magnetic resonance imaging (MRI) with
+                        Prof. Daniel Ennis, and in close collaboration with Prof. Alison Marsden and Mark Cutkosky. Her
+                        publications in international journals span across the fields of Cardiac Surgery, Medical
+                        Devices, Artificial Organs, Implantable Sensors, Signal processing, and Magnetic resonance
+                        imaging (MRI).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PostDocs -->
+        <section>
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                Researchers</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <!-- Swati Panda -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="assets/images/members/Swati_Panda.jpg" alt="Swati Panda"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Swati Panda</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">PostDoc</p>
+                </div>
+                <!-- Carina Veil -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="assets/images/members/Carina_Veil.jpg" alt="Carina Veil"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Carina Veil</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">PostDoc</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PhD Students -->
+        <section>
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                PhD Students
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <!-- Aurora Rosato -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="assets/images/members/Aurora_Rosato.jpg" alt="Aurora Rosato"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Aurora Rosato</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">PhD Student</p>
+                </div>
+                <!-- Kyle Mudge -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="assets/images/members/Kyle_Mudge.jpg" alt="Kyle Mudge"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Kyle Mudge</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">PhD Student</p>
+                </div>
+                <!-- Tien-Ying Lu -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="assets/images/members/Tien_Ying_Lu.jpg" alt="Tien-Ying Lu"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Tien-Ying Lu</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">PhD Student</p>
+                </div>
+                <!-- Fangnan Xu -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="assets/images/members/Fangnan_Xu.jpg" alt="Fangnan Xu"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Fangnan Xu</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">PhD Student</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visitors -->
+        <section>
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                Visiting
+                Professors</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 border border-transparent hover:border-gray-800 rounded transition duration-500">
+                    <h3 class="text-white font-normal text-lg mb-2 font-heading">Prof. Dr. Steffen Leonhardt</h3>
+                    <p class="text-kth-cerulean text-sm font-light">RWTH Aachen University</p>
+                </div>
+                <div class="p-6 border border-transparent hover:border-gray-800 rounded transition duration-500">
+                    <h3 class="text-white font-normal text-lg mb-2 font-heading">Prof. Nicolai Spicher</h3>
+                    <p class="text-kth-cerulean text-sm font-light">University Medical Center Göttingen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alumni -->
+        <section>
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                Alumni</h2>
+
+            <div class="space-y-12">
+                <!-- 2025 -->
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-white font-light text-xl font-heading">2025</div>
+                    <div
+                        class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm font-light text-white">
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Camilla De Amicis</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Vasoreactivity of the mouse aorta. Part 1:
+                                Vessel characterization through in-vitro tube inflation</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Lucrezia De Amicis</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Vasoreactivity of the mouse aorta. Part 2:
+                                Histomechanical tissue characterization</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Lorenzo De Bei</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Investigating Muscle Synergies in Finger
+                                Movements Using Surface EMG for Motor Coordination and Adaptation</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Giorgio Poma</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">LUMA
+                                Vision</span>
+                            <span class="text-sm italic leading-tight block">Evaluation of application specific tracking
+                                methods as related to percutaneous procedures, including technology assessment,
+                                benchmarking and integration of a selected solution into prototype imaging
+                                catheters</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Emma Schwoerer</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">MED-EL Medical
+                                Electronics</span>
+                            <span class="text-sm italic leading-tight block">Electromechanical Characterization of the
+                                Upper Airway Response to Negative Pressure Applications via a Mask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="grid md:grid-cols-4 gap-8 pt-12 border-t border-gray-900/50">
+                    <div class="text-white font-light text-xl font-heading">2024</div>
+                    <div
+                        class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm font-light text-white">
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Wilhelm Ros</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Development of an Invasive Pulse-Wave
+                                Analysis Algorithm in Patients with Chronic Coronary Syndrome Undergoing Coronary
+                                Angiography</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Solene Marie Jeanne Leroy</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">HinLab</span>
+                            <span class="text-sm italic leading-tight block">Optimization of a 1-lead ECG Collected
+                                between the Left Upper-Arm and a Right Finger</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Rebecca Bonato</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">Bio/CMOS
+                                Interface (BCI) Group EPFL</span>
+                            <span class="text-sm italic leading-tight block">Feasibility study of an ultra-miniaturised
+                                Self-Wake-Up device via Biofuel cell for Body Dust applications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="grid md:grid-cols-4 gap-8 pt-12 border-t border-gray-900/50">
+                    <div class="text-white font-light text-xl font-heading">2023</div>
+                    <div
+                        class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm font-light text-white">
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Hossein Bakhtiari</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">Realheart,
+                                KTH</span>
+                            <span class="text-sm italic leading-tight block">Development of a Compact Drive System for
+                                Total Artificial Heart</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Ana Candela Céldran</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Automatic monitoring of coagulation levels
+                                to exclude high risk of venous thrombosis in patients with mechanical assist
+                                devices</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Frida Hermansson</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">Linköping
+                                University</span>
+                            <span class="text-sm italic leading-tight block">Physiology-guided Machine Learning for
+                                Improved Reliability of Non-invasive Assessment of Pulmonary Hypertension</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="grid md:grid-cols-4 gap-8 pt-12 border-t border-gray-900/50">
+                    <div class="text-white font-light text-xl font-heading">2022</div>
+                    <div
+                        class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm font-light text-white">
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Julia Önerud</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Real-time EEG-based speech decoding</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Oliver Kreis*</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">ETH
+                                Zurich</span>
+                            <span class="text-sm italic leading-tight block">Control of a hybrid mock loop</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Roxanne Rais</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">ETH
+                                Zurich</span>
+                            <span class="text-sm italic leading-tight block">Dynamics of a computational model</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-kth-dark py-16 border-t border-gray-900">
+        <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
+            <div class="mb-8 md:mb-0">
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4">KTH I-HeaL</div>
+                <div class="text-white text-sm font-light leading-relaxed">
+                    KTH Royal Institute of Technology<br>
+                    Hälsovägen 11<br>
+                    141 52 Huddinge, Stockholm, Sweden
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row md:items-center gap-6 text-sm text-white font-light tracking-widest uppercase">
+                <a href="join.html" class="hover:text-white transition">Join Us</a>
+            </div>
+        </div>
+        <div
+            class="container mx-auto px-12 mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-700 font-mono">
+            &copy; 2026 INTELLIGENT HEART TECHNOLOGY LAB
+        </div>
+    </footer>
+
+</body>
+
+</html>
