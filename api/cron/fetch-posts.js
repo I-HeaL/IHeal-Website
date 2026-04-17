@@ -26,35 +26,36 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Precise Mapping based on latest JSON inspection
+        // 2. Mapping ultra-robusto
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
-            // URL: Use post.url directly if it exists, otherwise sanitizing
-            let publicUrl = post.url || post.post_url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
+            // Fix Link: Trasforma link admin in link pubblici
+            let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
             if (publicUrl.includes('/admin/')) {
-                const urnMatch = publicUrl.match(/activity:(\d+)/);
-                if (urnMatch && urnMatch[1]) {
-                    publicUrl = `https://www.linkedin.com/feed/update/urn:li:activity:${urnMatch[1]}`;
-                } else {
-                    publicUrl = 'https://www.linkedin.com/company/intelligent-heart-technology-lab/posts/';
+                const activityId = publicUrl.split('activity:')[1]?.split('/')[0];
+                if (activityId) {
+                    publicUrl = `https://www.linkedin.com/feed/update/urn:li:activity:${activityId}`;
                 }
             }
 
-            // Image: post.image[0].url
-            let img = null;
-            if (post.image && Array.isArray(post.image) && post.image.length > 0) {
-                img = post.image[0].url || null;
-            }
+            // Fix Immagine: Cerca in ogni possibile posizione del JSON
+            const img = post.image?.[0]?.url || 
+                        post.content?.images?.[0]?.url || 
+                        post.post_image || null;
+
+            // Fix Avatar: Prendi il logo del Lab
+            const avatar = post.author?.avatar?.[0]?.url || null;
 
             return {
                 text: post.text || '',
-                date: post.created_at || null, // Individual date for each post
+                date: post.created_at, // ISO string corretta
                 image_url: img,
+                avatar_url: avatar,
                 url: publicUrl
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Final refined mapping completed. Updating KV.');
+            console.log('Ultra-robust mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
@@ -63,7 +64,7 @@ export default async function handler(req, res) {
         }
 
     } catch (error) {
-        console.error('Final Mapping API Error:', error.message);
+        console.error('API Error:', error.message);
         return res.status(200).json({ success: false, error: error.message, preserved: true });
     }
 }
