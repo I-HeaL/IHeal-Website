@@ -26,9 +26,9 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Mapping con Ordinamento per Massima Risoluzione
+        // 2. Mapping ultra-robusto con Repost e Documenti
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
-            // Fix Link: Trasforma link admin in link pubblici
+            // URL Pubblico
             let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
             if (publicUrl.includes('/admin/')) {
                 const activityId = publicUrl.split('activity:')[1]?.split('/')[0];
@@ -37,27 +37,49 @@ export default async function handler(req, res) {
                 }
             }
 
-            // Selezione Intelligente: Ordina per larghezza (dalla più grande alla più piccola)
+            // Selezione Immagine Massima Qualità
             const imagesArray = post.content?.images?.[0]?.image || post.image || [];
             const bestImage = [...imagesArray].sort((a, b) => (b.width || 0) - (a.width || 0))[0];
             const img = bestImage?.url || null;
 
-            // Fix Avatar: Logo del Lab (sempre la risoluzione più alta)
+            // Avatar
             const avatars = post.author?.avatar || [];
-            const bestAvatar = [...avatars].sort((a, b) => (b.width || 0) - (a.width || 0))[0];
-            const avatar = bestAvatar?.url || null;
+            const avatar = avatars[avatars.length - 1]?.url || null;
+
+            // --- REPOST / ARTICLE / DOCUMENT DATA ---
+            let resharedData = null;
+            
+            // Priority 1: Classic Reshared Post
+            if (post.reshared_post) {
+                resharedData = {
+                    author: post.reshared_post.author?.name || 'LinkedIn User',
+                    text: post.reshared_post.text || '',
+                    url: post.reshared_post.url || null
+                };
+            } 
+            // Priority 2: Article or Document in Content
+            else if (post.content?.article || post.content?.document) {
+                const item = post.content.article || post.content.document;
+                resharedData = {
+                    author: item.source || 'External Source',
+                    text: item.title || '',
+                    url: item.url || null,
+                    isExternal: true
+                };
+            }
 
             return {
                 text: post.text || '',
                 date: post.created_at, 
                 image_url: img,
                 avatar_url: avatar,
-                url: publicUrl
+                url: publicUrl,
+                reshared_data: resharedData
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Maximum resolution mapping completed. Updating KV.');
+            console.log('Mapping completed with reshared data support. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
