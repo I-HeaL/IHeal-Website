@@ -254,18 +254,17 @@
                                 card.target = '_blank';
                                 card.className = 'group bg-[#f9fafb] border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer';
                                 
-                                // Dynamic Date Formatting
+                                // Dynamic Date Formatting (using post.date which maps to created_at)
                                 let displayDate = 'Post recente';
                                 if (post.date) {
                                     try {
+                                        // Handle numeric timestamp or ISO string
                                         const d = new Date(post.date);
                                         if (!isNaN(d.getTime())) {
                                             displayDate = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' });
-                                        } else {
-                                            displayDate = post.date; 
                                         }
                                     } catch (e) {
-                                        displayDate = post.date;
+                                        console.error('Date parsing error:', e);
                                     }
                                 }
 
