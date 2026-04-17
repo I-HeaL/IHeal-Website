@@ -254,6 +254,21 @@
                                 card.target = '_blank';
                                 card.className = 'group bg-[#f9fafb] border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer';
                                 
+                                // Dynamic Date Formatting
+                                let displayDate = 'Post recente';
+                                if (post.date) {
+                                    try {
+                                        const d = new Date(post.date);
+                                        if (!isNaN(d.getTime())) {
+                                            displayDate = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' });
+                                        } else {
+                                            displayDate = post.date; 
+                                        }
+                                    } catch (e) {
+                                        displayDate = post.date;
+                                    }
+                                }
+
                                 // Header: Lab Logo + Name + Date
                                 const headerHtml = `
                                     <div class="p-4 flex items-center gap-3 border-b border-gray-100">
@@ -262,17 +277,17 @@
                                         </div>
                                         <div class="flex flex-col">
                                             <span class="text-gray-900 font-bold text-[10px] uppercase tracking-tight">Intelligent Heart Technology Lab</span>
-                                            <span class="text-gray-400 text-[10px] uppercase tracking-wider">${post.date || 'Recent'}</span>
+                                            <span class="text-gray-400 text-[10px] uppercase tracking-wider">${displayDate}</span>
                                         </div>
                                     </div>
                                 `;
 
                                 // Image: Above text if exists
-                                const hasImage = post.image_url && post.image_url !== 'null';
+                                const hasImage = post.image_url && post.image_url !== 'null' && post.image_url !== '';
                                 const imageHtml = hasImage ? `
                                     <div class="px-5 pt-5">
-                                        <div class="rounded-lg overflow-hidden border border-gray-100 aspect-video">
-                                            <img src="${post.image_url}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+                                        <div class="rounded-lg overflow-hidden border border-gray-100 aspect-video bg-gray-50">
+                                            <img src="${post.image_url}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
                                         </div>
                                     </div>
                                 ` : '';

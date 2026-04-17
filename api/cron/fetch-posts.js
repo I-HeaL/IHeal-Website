@@ -26,51 +26,52 @@ export default async function handler(req, res) {
         }
 
         const result = await response.json();
-        
-        // --- DEBUG LOG ---
-        console.log('Raw API Response (First Post):', JSON.stringify(result.data ? result.data[0] : {}).substring(0, 500));
-
         const rawPosts = result.data || [];
         
-        // 2. Precise Mapping with Link Cleanup and Expanded Image Detection
+        // --- LOGGING DI EMERGENZA ---
+        if (rawPosts.length > 0) {
+            console.log('Esempio post grezzo:', JSON.stringify(rawPosts[0], null, 2));
+        }
+
+        // 2. Mapping robusto per Date e Immagini
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
-            // Fix Link: Remove admin references or build public URL
+            // Public URL Cleanup
             let publicUrl = post.url || post.post_url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
-            
             if (publicUrl.includes('/admin/')) {
-                // If it's an admin link, we try to extract the ID and rebuild
-                // Admin links often look like .../admin/dashboard/urn:li:fs_updateV2:urn:li:activity:712345...
                 const urnMatch = publicUrl.match(/activity:(\d+)/);
                 if (urnMatch && urnMatch[1]) {
                     publicUrl = `https://www.linkedin.com/feed/update/urn:li:activity:${urnMatch[1]}`;
                 } else {
-                    // Fallback to general page if we can't clean it
                     publicUrl = 'https://www.linkedin.com/company/intelligent-heart-technology-lab/posts/';
                 }
             }
 
-            // Image detection: try all possible field names
-            const image = post.image_url || post.media_url || post.post_image || 
-                          (post.images && post.images.length > 0 ? post.images[0] : null) ||
-                          (post.article && post.article.image ? post.article.image : null);
+            // Data Dinamica
+            const extractedDate = post.posted_at || post.time || post.created_at || post.timestamp || post.date || null;
 
-            console.log('Post Link:', publicUrl);
-            console.log('Image found:', !!image);
+            // Recupero Immagini (Deep search)
+            let img = post.post_image || post.image_url || post.image || null;
+            if (!img && post.media && Array.isArray(post.media) && post.media.length > 0) {
+                img = post.media[0].url || post.media[0].image;
+            }
+            if (!img && post.images && Array.isArray(post.images) && post.images.length > 0) {
+                img = post.images[0].url || post.images[0];
+            }
 
             return {
                 text: post.text || post.commentary || '',
-                date: post.posted_at || 'Recent',
-                image_url: image, // Using image_url consistently as requested
+                date: extractedDate,
+                image_url: img, // Usiamo image_url come richiesto
                 url: publicUrl
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log(`Successfully mapped ${mappedPosts.length} posts. Updating KV.`);
+            console.log('Mappatura completata. Aggiorno KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
-            console.warn('API returned 0 posts. Current KV data preserved.');
+            console.warn('API returned 0 posts.');
             return res.status(200).json({ success: true, count: 0, preserved: true });
         }
 
