@@ -49,7 +49,6 @@ export default async function handler(req, res) {
             const avatars = post.author?.avatar || [];
             const avatar = avatars[avatars.length - 1]?.url || null;
 
->>>>>>> parent of c2779cb (Linkedin images)
             return {
                 text: post.text || '',
                 date: post.created_at, // ISO string da API
