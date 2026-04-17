@@ -251,14 +251,24 @@
                             // Render posts in beautiful cards
                             data.posts.forEach((post, index) => {
                                 const card = document.createElement('div');
-                                card.className = 'bg-[#22272d] border border-gray-700/50 rounded-lg p-5 shadow-sm hover:border-gray-500 transition-colors';
+                                card.className = 'bg-[#22272d] border border-gray-700/50 rounded-lg p-5 shadow-sm hover:border-gray-500 transition-colors flex flex-col md:flex-row gap-4';
                                 
-                                // Format date nicely (fallbacks handle extracted string)
+                                // Format date nicely
                                 const dateSpan = post.date ? `<span class="text-xs text-gray-400 mb-2 block font-mono">${post.date}</span>` : '';
                                 
+                                // Image handling
+                                const imageHtml = post.image ? `
+                                    <div class="w-full md:w-32 h-32 md:h-auto shrink-0 rounded overflow-hidden">
+                                        <img src="${post.image}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                                    </div>
+                                ` : '';
+
                                 card.innerHTML = `
-                                    ${dateSpan}
-                                    <p class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap break-words">${post.text}</p>
+                                    ${imageHtml}
+                                    <div class="flex-1">
+                                        ${dateSpan}
+                                        <p class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap break-words">${post.text}</p>
+                                    </div>
                                 `;
                                 container.appendChild(card);
                             });
