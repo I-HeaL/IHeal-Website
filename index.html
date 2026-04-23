@@ -222,9 +222,11 @@
                                 Technology Lab</h3>
                             <p class="text-white/70 text-xs mt-1">Updates from LinkedIn</p>
                         </div>
+                        <a href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank"
+                            class="hidden md:inline-flex items-center px-6 py-2 border border-white text-white text-xs font-bold tracking-widest hover:bg-white/10 hover:text-white transition uppercase rounded">
+                            Follow Us
+                        </a>
                     </div>
-                        class="hidden md:inline-flex items-center px-6 py-2 border border-white text-white text-xs font-bold tracking-widest hover:bg-white/10 hover:text-white transition uppercase rounded">
-                </div>
 
                 <!-- Custom LinkedIn Feed Container - Grid Layout -->
                 <div id="custom-linkedin-feed"
@@ -292,7 +294,7 @@
                                     <div class="p-4 flex items-center gap-3">
                                         ${avatarHtml}
                                         <div class="flex flex-col">
-                                            <span class="text-gray-900 font-bold text-[11px] uppercase tracking-tight">Intelligent Heart Technology Lab</span>
+                                            <span class="text-white/90 font-bold text-[11px] uppercase tracking-tight">Intelligent Heart Technology Lab</span>
                                             <div class="flex items-center gap-1">
                                                 <span class="text-gray-400 text-[10px] uppercase tracking-wider">${displayDate}</span>
                                                 <span class="text-gray-400">·</span>
@@ -305,7 +307,7 @@
                                 // Lab Body Text
                                 const bodyHtml = `
                                     <div class="px-4 pb-4">
-                                        <p class="text-gray-800 text-[13.5px] leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-300">
+                                        <p class="text-slate-300 text-[13.5px] leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-300">
                                             ${post.text}
                                         </p>
                                     </div>
@@ -315,7 +317,7 @@
                                 let imageHtml = '';
                                 if (post.image_url && post.image_url !== 'null') {
                                     imageHtml = `
-                                        <div class="w-full bg-gray-50 border-t border-gray-100 aspect-video overflow-hidden">
+                                        <div class="w-full bg-black/20 border-t border-gray-800/50 aspect-video overflow-hidden">
                                             <img src="${post.image_url}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                                         </div>
                                     `;
